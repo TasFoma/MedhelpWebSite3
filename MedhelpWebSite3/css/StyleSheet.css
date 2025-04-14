@@ -1,0 +1,719 @@
+﻿* {
+    font-family: cambria,Times New Roman,cambria, Georgia, Times, serif;
+}
+
+html,
+body,
+#form1 {
+    height: 100%;
+}
+
+.no-right-click {
+    pointer-events: none;
+}
+
+h1,
+.appointment-picking-title {
+    font-size: 25px;
+    text-align: center;
+    color: #000;
+    padding: 10px;
+    margin: 0;
+}
+
+h3,
+.title {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 5px 0;
+}
+
+.post-title {
+    font-size: 17px;
+    margin: 10px 10px 10px 0;
+    /*width: 100%;*/
+    /*font-weight: bold;*/
+}
+
+.appointment-picking-title {
+    font-size: 20px;
+}
+
+.page-title,
+.appointment-picking-title {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+body,
+#form1 {
+    font-size: 14px;
+    margin: 0;
+    background: #258cd1;
+    background-image: url("../Image/background.png");
+    color: #000;
+}
+
+.center {
+    text-align: center;
+}
+
+.left {
+    text-align: left;
+}
+
+.container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    min-height: 100%;
+    max-width: 900px;
+    min-width: 550px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.main-content {
+    /*height: 100%;*/
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 0 auto;
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto;
+    -webkit-flex-grow: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+}
+
+header {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    padding: 20px;
+    margin-bottom: 5px;
+    background: #258cd1;
+    color: white;
+    font-weight: 600;
+    font-size: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.area-for-back-button {
+    width: 60px;
+    min-height: 100%;
+    position: absolute;
+    left: 10px;
+    top: 0;
+    display: none;
+}
+
+.back-button {
+    position: absolute;
+    top: Calc(50% - 15px);
+    width: inherit;
+    height: 30px;
+    background-image: url("../Image/Назад.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.area-for-back-button:hover {
+    cursor: pointer;
+}
+
+.content-wrap {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 100%;
+    -webkit-flex: 1 1 100%;
+    flex: 1 1 100%;
+    padding: 0;
+    /*margin-bottom: 20px;*/
+    background: white;
+    height: 100%;
+}
+
+aside {
+    margin-bottom: 20px;
+    min-width: 300px;
+}
+
+.aside-wrap {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    bottom: 0;
+}
+
+.side-bar-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+    .side-bar-list li,
+    .side-bar-list i {
+        color: #2187dd;
+    }
+
+    .side-bar-list li {
+        border-bottom: 1px solid #eaeaea;
+    }
+
+        .side-bar-list li:last-child {
+            border-bottom: none;
+        }
+
+        .side-bar-list li:hover,
+        .side-bar-list li:hover i {
+            cursor: pointer;
+        }
+
+        .side-bar-list li:hover {
+            background-color: rgba(158, 158, 158, 0.2);
+        }
+
+    .side-bar-list a {
+        text-decoration: none;
+        outline: none;
+        letter-spacing: 1px;
+        font-weight: 300;
+        color: inherit;
+        display: block;
+        padding: 20px;
+    }
+
+    .side-bar-list i {
+        font-size: 18px;
+        margin-right: 20px;
+    }
+
+.search-block {
+    width: 100%;
+}
+
+.background-div {
+    height: 100%;
+}
+
+.block-start-position {
+    position: fixed;
+    top: Calc(50% - 65px);
+    left: Calc(50% - 450px);
+}
+
+.inner-search-block {
+    background: #258cd1;
+    width: 100%;
+}
+
+.search-fields {
+    width: Calc(100% - 62px);
+}
+
+.search-button-container {
+    width: 62px;
+    float: right;
+}
+
+.search-textbox {
+    width: Calc(100% - 26px);
+    margin-left: 20px;
+    font-weight: 600;
+}
+
+.dropDownList {
+    width: Calc(100% - 40px);
+    color: #000;
+    margin: 0 20px 10px 20px;
+}
+
+.list-view {
+    border-bottom: 1px solid #808080;
+    margin-bottom: 0;
+    padding: 0 20px;
+}
+
+    .list-view:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+    }
+
+.row-for-photo {
+    width: 160px;
+}
+
+.photo-container,
+.photo {
+    width: 150px;
+    height: 150px;
+}
+
+.photo-container {
+    padding: 20px 20px 0 20px;
+}
+
+.main-table-info,
+.table-info,
+.doctor-info {
+    padding: 0 20px;
+}
+
+.doctor-info {
+    width: Calc(100% - 40px);
+    padding: 0 20px 0px 20px;
+    max-height: 150px;
+    overflow: hidden;
+}
+
+.main-span,
+.additional-span,
+.additional-info,
+.main-additional-info {
+    color: black;
+}
+
+.additional-span-dop-info {
+    color: red;
+    font-size: 14px;
+}
+
+.main-span,
+.main-additional-info,
+.additional-info {
+    font-weight: 600;
+    font-size: 20px;
+    margin: 0 auto;
+}
+
+.additional-info,
+.doctor-additional-info {
+    font-size: 16px;
+}
+
+.doctor-additional-info {
+    margin: 0;
+    font-weight: 600;
+}
+
+.mh {
+    max-height: inherit;
+    overflow: auto;
+}
+
+.additional-info:hover {
+    cursor: default;
+}
+
+.main-additional-info {
+    text-decoration: none;
+}
+
+    .main-additional-info:hover {
+        cursor: default;
+        /*text-decoration-line: underline;*/
+    }
+
+.additional-span {
+    font-weight: 400;
+    font-size: 14px;
+    max-height: 100px;
+}
+
+.taj {
+    text-align: justify;
+}
+.my-link-sign-up {
+    color: #258cd1;
+    text-decoration: none;
+}
+.my-link-sign-up:hover { 
+    text-decoration: underline;
+}
+
+.price-list-view-container {
+    overflow: hidden;
+    width: Calc(100% - 10px);
+    padding: 5px;
+    padding-top: 0;
+}
+
+.price-list-view {
+    padding: 0 20px;
+ /*   border-bottom: 1px solid #808080;*/
+    color: #393939;
+    background: #fff;
+}
+
+    .price-list-view .title {
+        width: Calc(100% - 40px);
+    }
+
+    .price-list-view:last-child {
+        border-bottom: none;
+    }
+
+    .price-list-view:hover {
+        cursor: pointer;
+        background: rgba(215, 215, 215, 0.9);
+    }
+
+.default-cursor:hover {
+    cursor: default;
+}
+
+.service-name-td {
+    text-align: left;
+    width: 100%;
+}
+
+.service-price-td {
+    text-align: right;
+    width: 0;
+    white-space: nowrap;
+    /*padding-right: 15px;*/
+}
+
+.additional-price-td {
+    visibility: collapse;
+    font-weight: 600;
+}
+
+.additional-appointment-button-container {
+    visibility: collapse;
+}
+
+.hidden-record {
+    /*visibility: collapse;*/
+    display: none;
+}
+
+.show-record {
+    display: table-row;
+    /*visibility: visible;*/
+    height: 50px;
+}
+
+.simple-button {
+    width: auto;
+    color: #fff;
+    background: #258cd1;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    padding: 10px;
+}
+
+.information-button {
+    text-transform: none;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    font-size: 16px;
+    text-align: center;
+    font-family: Mistral cursive;
+    font-style: italic;
+    padding: 0;
+}
+
+.small-button {
+    font-weight: 400;
+    font-size: 10px;
+    letter-spacing: normal;
+}
+
+.search-button {
+    padding: 38px 20px 0 20px;
+    border-radius: 0;
+    font-size: 16px;
+}
+
+.simple-button:hover {
+    cursor: pointer;
+    border: 2px solid #00545c;
+}
+
+.search-button:hover,
+.information-button:hover {
+    border: 2px solid transparent;
+}
+
+.search-hint-block {
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    width: Calc(100% - 40px);
+    padding: 10px 20px;
+}
+
+.link {
+    text-decoration: none;
+}
+
+    .link.space {
+        margin: 0;
+        /*margin-left: 10px;*/
+    }
+
+footer {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    margin-top: 5px;
+    padding: 10px;
+    /*background: green;*/
+    background: #4c5866;
+    text-align: center;
+}
+
+    footer a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+.infoMessage {
+    font-size: 14px;
+    color: green;
+}
+
+.errorMessage {
+    font-size: 14px;
+    color: red;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: grey;
+    z-index: 3;
+    display: block;
+    opacity: 0.8;
+    text-align: center;
+}
+
+.splitter-top {
+    margin-top: 5px;
+}
+
+.hide {
+    display: none;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+@media only screen and (max-width: 550px) {
+    header,
+    footer {
+        width: 510px;
+    }
+
+    body,
+    #form1 {
+        overflow: visible;
+    }
+}
+
+@media only screen and (min-width: 240px) and (max-width: 480px) {
+    .container {
+        max-width: 480px;
+        min-width: 320px;
+        width: 100%;
+    }
+
+    header,
+    footer {
+        width: Calc(100% - 40px);
+    }
+
+    .search-button {
+        padding-top: 56px;
+    }
+
+    .link.space {
+        margin-left: -20px;
+    }
+
+    .service-name-td {
+        min-width: 170px;
+    }
+
+    .title {
+        font-size: 14px;
+    }
+
+    .comment {
+        font-size: 12px;
+    }
+
+    .service-price-td {
+        padding-right: 5px;
+    }
+
+    .price-list-view {
+        padding: 0 5px;
+    }
+
+    h1 {
+        font-size: 23px;
+    }
+
+    .appointment-picking-title {
+        font-size: 19px;
+    }
+}
+
+@media only screen and (min-width: 240px) and (max-width: 359px) {
+    .row-for-photo,
+    .photo-container,
+    .photo {
+        width: 80px;
+        height: 80px;
+    }
+
+    .photo-container {
+        padding: 20px 5px 0 5px;
+    }
+}
+
+@media only screen and (min-width: 240px) and (max-width: 319px) {
+    .container {
+        max-width: 319px;
+        min-width: 240px;
+    }
+
+    .row-for-photo {
+        width: 80px;
+    }
+
+    .photo-container,
+    .photo {
+        width: 60px;
+        height: 100%;
+    }
+
+    .photo-container {
+        padding: 10px;
+        width: 60px;
+        height: 100%;
+        min-height: 90px;
+        min-width: 60px;
+    }
+
+    .price-list-view {
+        padding: 0 5px;
+    }
+
+    .title {
+        width: Calc(100% - 10px);
+    }
+
+    .service-price-td,
+    .appointment-button-container {
+        visibility: collapse;
+        padding: 0;
+    }
+
+    .additional-price-td,
+    .additional-appointment-button-container {
+        visibility: visible;
+    }
+
+    .service-name-td,
+    .additional-appointment-button-container {
+        width: 220px;
+    }
+
+    header {
+        font-size: 16px;
+    }
+
+    .main-additional-info {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 340px) {
+    header {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    /*.main-content {
+        display: flex;
+        flex-direction: column;
+    }*/
+
+    .content-wrap {
+        /*width: Calc(100% - 300px);*/
+        width: 100%;
+        /*margin-left: 20px;*/
+    }
+
+    /*aside {
+        width: 300px;
+    }*/
+}
+
+/*Специфичный для microsoft (IE) запрос, это нужно, потому что в IE не работает display: flex*/
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .container,
+    .main-content {
+        display: block;
+    }
+
+    .container {
+        position: relative;
+        min-height: 100%;
+        background: #fff;
+    }
+
+    .content-wrap {
+        height: 100%;
+    }
+
+    .main-content {
+        padding: 61px 0;
+    }
+
+    header,
+    footer {
+        position: absolute;
+        left: 0;
+        width: Calc(100% - 40px);
+    }
+
+    header {
+        top: 0;
+    }
+
+    footer {
+        bottom: 0;
+    }
+}

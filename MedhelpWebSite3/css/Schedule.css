@@ -1,0 +1,437 @@
+﻿.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+.schedule-container,
+.month-container {
+    width: 100%;
+}
+
+.schedule-container {
+    margin: auto;
+}
+
+.month-container {
+    margin: auto;
+    height: 30px;
+    text-align: center;
+}
+
+.month-label {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.record-buttons-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.record-buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-left: 50px;
+    margin-top: 20px;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+}
+
+.schedule {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-pack: distribute;
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.day-of-week,
+.next-week {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    -webkit-flex: 0 0 auto;
+    flex: 0 0 auto;
+    height: 85px;
+    margin: 0 5px;
+}
+
+.day-of-week {
+    width: 9%;
+    min-width: 70px;
+}
+
+.change-week {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    /*flex: 1 0 0;*/
+    position: relative;
+}
+
+.prev-week-button {
+    position: absolute;
+    height: 0;
+    width: 0;
+    border: 15px solid transparent;
+    border-right: 15px solid #258cd1;
+    top: 45%;
+    right: 15%;
+}
+
+.next-week-button {
+    position: absolute;
+    height: 0;
+    width: 0;
+    border: 15px solid transparent;
+    border-left: 15px solid #258cd1;
+    top: 45%;
+    left: 15%;
+}
+
+.day-of-week-button,
+.recording-button {
+    background-color: #66bb6a;
+}
+
+.day-of-week-button {
+    border-radius: 5px;
+    border: 2px solid #99c39b;
+    height: 60px;
+    width: 100%;
+    min-width: 40px;
+    /*display: block;*/
+    /*text-align: center;*/
+    font-size: 18px;
+    color: #000;
+}
+
+    .day-of-week-button:hover,
+    .prev-week-button:hover,
+    .next-week-button:hover,
+    .recording-button:hover {
+        cursor: pointer;
+    }
+
+.disabled-next-week-button:hover,
+.disabled-prev-week-button:hover {
+    cursor: default;
+}
+
+.day-of-week-label {
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.month-label,
+.day-of-week-label {
+    color: #258cd1;
+}
+
+.lo-business-day {
+    border-color: #569f59;
+    background: #66bb6a;
+}
+
+.medium-business-day {
+    border-color: #9f5a00;
+    background: #ff9100;
+}
+
+.high-business-day {
+    border-color: #891f1d;
+    background: #ef5350;
+}
+
+.branch-container,
+.checked-service-container {
+    width: Calc(100% - 40px);
+    padding: 0 20px;
+}
+
+.checked-service-container {
+    padding: 10px 20px;
+}
+
+.branch-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+}
+
+.branch-button {
+    background: transparent;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    width: auto;
+    min-width: 10%;
+    text-decoration: underline;
+    margin: 5px 10px 5px 0;
+}
+
+    .branch-button:hover {
+        border: 2px solid #258cd1;
+        text-decoration: none;
+    }
+
+.checked-branch {
+    background: #258cd1;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.branch-button:hover {
+    cursor: pointer;
+}
+
+.checked-branch:hover {
+    cursor: default;
+}
+
+.branch-button,
+.recording-button {
+    height: 40px;
+    font-size: 18px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.recording-button {
+    border: 3px solid transparent;
+    color: #fff;
+    border-radius: 5px;
+    width: 4vw;
+    min-width: 100px;
+    height: 50px;
+    margin: 0 10px 10px 0;
+}
+
+    .recording-button:hover {
+        /*border: 3px solid #0020f7;*/
+        border: 3px solid #258cd1;
+    }
+
+.checked-day {
+    border-width: 3px;
+    border-color: #258cd1;
+    color: #fff;
+}
+
+.passed-day,
+.disabled-day,
+.disabled {
+    border-color: #bebebe;
+    background: #d1d1d1;
+    color: #000;
+}
+
+    .passed-day:hover,
+    .disabled-day:hover,
+    .disabled:hover,
+    .high-business-day:hover {
+        cursor: initial;
+    }
+
+#MainContentPlaceHolder_CheckedServiceTitle {
+    margin: 0;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+.call-me-container {
+    margin: 10px 15px;
+    width: Calc(100% - 44px);
+    border: solid 2px green;
+    display: none;
+    text-align: center;
+    padding: 5px;
+}
+
+    .call-me-container div {
+        width: 100%;
+        margin: 5px auto;
+    }
+
+.call-me-title {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.call-me-add-title {
+    font-size: 16px;
+}
+
+.success-call {
+    display: none;
+    color: indianred;
+}
+
+#MainContentPlaceHolder_callMeValidationSummary ul {
+    padding: 0;
+    margin: 10px 0;
+    list-style-type: none;
+    color: red;
+}
+
+@media (max-width: 605px) {
+    .day-of-week,
+    .next-week {
+        margin: 0;
+    }
+}
+
+@media only screen and (min-width: 240px) and (max-width: 480px) {
+    body,
+    #form1 {
+        overflow-x: hidden;
+    }
+
+    .container {
+        max-width: 480px;
+        min-width: 320px;
+    }
+
+    .day-of-week,
+    .next-week {
+        height: 66px;
+        margin: 0 1px;
+    }
+
+    .day-of-week-button {
+        height: 45px;
+    }
+
+    .day-of-week {
+        width: 6%;
+        min-width: 45px;
+    }
+
+    .change-week {
+        margin: 0 1px;
+    }
+
+    .prev-week-button {
+        border: 10px solid transparent;
+        border-right: 10px solid #258cd1;
+        top: 50%;
+        right: 15%;
+    }
+
+    .next-week-button {
+        border: 10px solid transparent;
+        border-left: 10px solid #258cd1;
+        top: 50%;
+        left: 15%;
+    }
+
+    .hint {
+        width: Calc(50% - 10px);
+    }
+
+    .inner-hint-container {
+        width: 100%;
+    }
+
+    .recording-button {
+        min-width: 70px;
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 345px) {
+    .container {
+        max-width: 345px;
+    }
+
+    .day-of-week,
+    .next-week {
+        height: 61px;
+        margin: 0 1px;
+    }
+
+    .day-of-week-button {
+        height: 40px;
+    }
+
+    .day-of-week {
+        width: 5%;
+        min-width: 40px;
+    }
+
+    .hint-container {
+        width: Calc(100% - 10px);
+    }
+
+    .record-buttons {
+        margin-left: 26px;
+    }
+}
+
+@media only screen and (min-width: 240px) and (max-width: 319px) {
+    .container {
+        max-width: 319px;
+        min-width: 240px;
+    }
+
+    .day-of-week,
+    .next-week {
+        height: 49px;
+        margin: 0 0.5px;
+    }
+
+    .day-of-week-button {
+        height: 28px;
+        padding: 0;
+        font-size: 14px;
+    }
+
+    .day-of-week {
+        width: 4%;
+        min-width: 28px;
+    }
+
+    .record-buttons {
+        margin-left: 30px;
+    }
+
+    .recording-button {
+        min-width: 60px;
+    }
+
+    .schedule {
+        padding-bottom: 10px;
+    }
+}
+
+.disabled-prev-week-button {
+    border-right-color: #bebebe;
+}
+
+.disabled-next-week-button {
+    border-left-color: #bebebe;
+}

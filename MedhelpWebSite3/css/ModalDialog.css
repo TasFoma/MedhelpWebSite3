@@ -1,0 +1,284 @@
+﻿.modal-dialog-background {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    background: grey;
+    z-index: 1;
+}
+
+.modal-dialog {
+    position: fixed;
+    left: Calc(50% - 150px);
+    top: Calc(50% - 125px);
+    background: #e6e6e6;
+    z-index: 2;
+    display: none;
+    width: 542.333px;
+    max-width: 600px;
+}
+
+.window {
+    border: 2px solid #bbbbbb;
+    color: #000;
+    padding-bottom: 10px;
+}
+
+.dialog-title,
+.dialog-element {
+    padding: 10px;
+}
+
+.dialog-element {
+    padding-bottom: 0;
+}
+
+.dialog-element,
+.dialog-title {
+    font-weight: 600;
+    width: Calc(100% - 20px);
+}
+
+.dialog-title {
+    font-size: 18px;
+    background: #258cd1;
+    color: #fff;
+}
+
+    .dialog-title p {
+        margin: 0;
+        padding: 5px 0;
+    }
+
+.checked-value {
+    font-weight: 300;
+}
+
+.dialog-button {
+    width: Calc(50% - 2px);
+}
+
+.error-dialog-button {
+    background: transparent;
+    border: 2px solid transparent;
+    color: red;
+    width: auto;
+}
+
+.show-background-modal-dialog {
+    display: block;
+    opacity: 0.8;
+    filter: alpha(opacity = 80);
+}
+
+h3:hover {
+    text-decoration: none;
+    cursor: default;
+}
+
+.tooltip {
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.dialog-element:hover,
+.disabled-button:hover {
+    cursor: default;
+}
+
+.disabled-button {
+    border-color: #bebebe;
+    background: #d1d1d1;
+}
+
+.phoneConfirmOffer:first-child {
+    padding-top: 0;
+    margin-bottom: 0;
+}
+
+.phoneConfirmForm,
+.phoneConfirmOffer,
+.inputPersonalInfo,
+.checkPatientForm {
+    display: none;
+}
+
+    .phoneConfirmForm .dialog-element {
+        padding: 0;
+        width: 100%;
+    }
+
+.patient-data {
+    width: 50%;
+    float: right;
+}
+
+.patient-list-box {
+    width: 100%;
+}
+
+.error-container {
+    max-width: 600px;
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+.hover-border-none:hover {
+    border: 2px solid transparent;
+}
+
+#MainContentPlaceHolder_fieldsValidationSummary ul {
+    padding: 0;
+    margin: 10px 0;
+    list-style-type: none;
+    color: red;
+}
+
+.full-width {
+    width: Calc(100% - 2px);
+}
+
+#MainContentPlaceHolder_backToClientSiteButton {
+    margin-bottom: 10px;
+}
+
+.close-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: #fff;
+    font-size: 26px;
+}
+
+    .close-button:hover {
+        cursor: pointer;
+    }
+
+@media only screen and (min-width: 240px) and (max-width: 319px) {
+    .modal-dialog {
+        min-width: 240px;
+        max-width: 240px;
+    }
+
+    .dialog-element {
+        padding: 5px 5px 0 5px;
+        width: Calc(100% - 10px);
+    }
+
+    .simple-button,
+    .dialog-button {
+        font-size: 10px;
+        padding: 10px 4px;
+    }
+
+    .information-button {
+        font-size: 16px;
+        padding: 0;
+    }
+
+    #MainContentPlaceHolder_codeTextBox {
+        width: 90px;
+    }
+
+    #MainContentPlaceHolder_phoneTextBox {
+        width: 106px;
+    }
+
+    #MainContentPlaceHolder_confirmPhoneButton {
+        font-size: 8px;
+    }
+
+    .terms-info {
+        font-size: 12px;
+        margin: 10px 0;
+    }
+
+    .list-view {
+        padding: 0 5px;
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .modal-dialog {
+        min-width: 320px;
+        max-width: 320px;
+    }
+
+    .simple-button,
+    .dialog-button {
+        font-size: 10px;
+        padding: 10px 4px;
+    }
+
+    .information-button {
+        font-size: 16px;
+        padding: 0;
+    }
+
+    .phoneConfirmForm {
+        word-spacing: normal;
+    }
+
+    #MainContentPlaceHolder_codeTextBox {
+        width: 90px;
+    }
+
+    #MainContentPlaceHolder_phoneTextBox {
+        width: 116px;
+    }
+}
+
+@media only screen and (max-height: 514px) and (max-width: 360px) {
+    .terms-info {
+        margin: 2px 0;
+        font-weight: 300;
+    }
+}
+
+@media only screen and (max-height: 394px) {
+    .dialog-element, .dialog-title {
+        width: Calc(100% - 10px);
+        padding: 5px;
+    }
+
+    .dialog-title {
+        font-size: 16px;
+    }
+
+    .dialog-element {
+        padding-bottom: 0;
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-height: 440px) and (max-width: 320px) {
+    .terms-info {
+        font-size: 10px;
+    }
+}
+
+@media only screen and (max-height: 315px) {
+    .dialog-element {
+        padding: 5px 10px 0 10px;
+    }
+
+    .dialog-title p {
+        padding: 0;
+    }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 542.333px) {
+    .modal-dialog {
+        min-width: 480px;
+        max-width: 480px;
+    }
+}
