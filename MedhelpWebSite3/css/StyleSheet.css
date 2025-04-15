@@ -24,7 +24,7 @@ h1,
 h3,
 .title {
     font-size: 16px;
-    font-weight: 600;
+    font-weight: normal;
     margin: 5px 0;
 }
 
@@ -41,7 +41,7 @@ h3,
 
 .page-title,
 .appointment-picking-title {
-    font-weight: bold;
+  /*  font-weight: bold;*/
     text-decoration: underline;
 }
 
@@ -106,7 +106,7 @@ header {
     margin-bottom: 5px;
     background: #258cd1;
     color: white;
-    font-weight: 600;
+  /* font-weight: 600;*/ 
     font-size: 20px;
     text-align: center;
     position: relative;
@@ -191,7 +191,7 @@ aside {
         text-decoration: none;
         outline: none;
         letter-spacing: 1px;
-        font-weight: 300;
+      /* font-weight: 300;*/ 
         color: inherit;
         display: block;
         padding: 20px;
@@ -217,31 +217,85 @@ aside {
 }
 
 .inner-search-block {
-    background: #258cd1;
+    /* background: #258cd1;*/
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    color: rgba(0, 0, 0, 1);
     width: 100%;
 }
 
 .search-fields {
-    width: Calc(100% - 62px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
+
 
 .search-button-container {
     width: 62px;
     float: right;
 }
 
+
+.search-input-container {
+    display: flex;
+    /*   margin-left: 20px;*/
+    width: Calc(100% - 85px);
+    /*  width: 100%;*/
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(246, 246, 246, 1);
+    height: 50px;
+    border-bottom: 1px solid rgba(223, 223, 223, 1);
+    border-radius: 10px; 
+    position:relative;
+    /* overflow: hidden;*/
+}
 .search-textbox {
-    width: Calc(100% - 26px);
-    margin-left: 20px;
-    font-weight: 600;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    width: 100%;
+    height: 50px;
+    padding-left: 20px;
 }
-
-.dropDownList {
-    width: Calc(100% - 40px);
-    color: #000;
-    margin: 0 20px 10px 20px;
+.search-button {
+    position:absolute;
+   right:10px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    height: 50px;
 }
-
+.search-icon {
+   color: #258cd1;
+   font-size:1.5em;
+}
+.dropDownList { 
+    width: Calc(100% - 85px);
+    color: rgba(0, 0, 0, 1);
+    height: 50px;
+    background-color: rgba(246, 246, 246, 1);
+    /* border-bottom: 1px solid rgba(223, 223, 223, 1);*/
+    border-radius: 10px;
+    padding-left: 20px;
+    margin: 0 20px 0 20px;
+}
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /* Some browsers will not display the caret when using calc, so we put the fallback first */
+    background: url("http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png") white no-repeat 98.5% !important; /* !important used for overriding all other customisations */
+    background: url("http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png") white no-repeat calc(100% - 10px) !important; /* Better placement regardless of input width */
+    padding-right: 100px;
+}
+    /*For IE*/
+    select::-ms-expand {
+        display: none;
+    }
 .list-view {
     border-bottom: 1px solid #808080;
     margin-bottom: 0;
@@ -295,7 +349,7 @@ aside {
 .main-span,
 .main-additional-info,
 .additional-info {
-    font-weight: 600;
+   /* font-weight: 600;*/
     font-size: 20px;
     margin: 0 auto;
 }
@@ -307,7 +361,7 @@ aside {
 
 .doctor-additional-info {
     margin: 0;
-    font-weight: 600;
+   /* font-weight: 600;*/
 }
 
 .mh {
@@ -329,7 +383,7 @@ aside {
     }
 
 .additional-span {
-    font-weight: 400;
+   /*font-weight: 400;*/ 
     font-size: 14px;
     max-height: 100px;
 }
@@ -341,26 +395,35 @@ aside {
     color: #258cd1;
     text-decoration: none;
 }
-.my-link-sign-up:hover { 
-    text-decoration: underline;
-}
+    .my-link-sign-up:hover {
+        text-decoration: underline;
+        color: white;
+    }
 
 .price-list-view-container {
+    /* left: 42px;*/
+    width: Calc(100% - 85px);
     overflow: hidden;
-    width: Calc(100% - 10px);
-    padding: 5px;
+    /* padding: 0 20px;*/
     padding-top: 0;
+    color: rgba(223, 223, 223, 1);
+    background-color: rgba(246, 246, 246, 1);
+    border-bottom: 1px solid rgba(223, 223, 223, 1);
+    border-radius: 10px;
 }
 
 .price-list-view {
-    padding: 0 20px;
- /*   border-bottom: 1px solid #808080;*/
-    color: #393939;
-    background: #fff;
+    /*  padding: 0 20px;
+      border-bottom: 1px solid #808080;*/ 
+    width: 100%;
+    color: rgba(0, 0, 0, 1);
+    background-color: rgba(246, 246, 246, 1);
+  /*  border-bottom: 1px solid rgba(223, 223, 223, 1);
+    border-radius: 10px;*/
 }
 
     .price-list-view .title {
-        width: Calc(100% - 40px);
+        width: 100% ;
     }
 
     .price-list-view:last-child {
@@ -368,8 +431,9 @@ aside {
     }
 
     .price-list-view:hover {
+        color:white;
         cursor: pointer;
-        background: rgba(215, 215, 215, 0.9);
+        background: #258cd1;
     }
 
 .default-cursor:hover {
@@ -377,6 +441,8 @@ aside {
 }
 
 .service-name-td {
+    padding-left: 20px;
+    padding-right: 20px;
     text-align: left;
     width: 100%;
 }
@@ -390,7 +456,7 @@ aside {
 
 .additional-price-td {
     visibility: collapse;
-    font-weight: 600;
+   /* font-weight: 600;*/
 }
 
 .additional-appointment-button-container {
@@ -410,12 +476,12 @@ aside {
 
 .simple-button {
     width: auto;
-    color: #fff;
-    background: #258cd1;
+    color: rgba(0, 0, 0, 1);
+    /* background: #258cd1;*/
     border-radius: 10px;
     border: 2px solid transparent;
     text-transform: uppercase;
-    font-weight: 600;
+   /*font-weight: 600;*/ 
     letter-spacing: 0.07em;
     padding: 10px;
 }
@@ -433,16 +499,18 @@ aside {
 }
 
 .small-button {
-    font-weight: 400;
+   /* font-weight: 400;*/
     font-size: 10px;
     letter-spacing: normal;
 }
-
+/*
 .search-button {
     padding: 38px 20px 0 20px;
-    border-radius: 0;
+    border-radius: 10px;
     font-size: 16px;
-}
+    background-color: rgba(246, 246, 246, 1);
+    border-bottom: 1px solid rgba(223, 223, 223, 1);
+}*/
 
 .simple-button:hover {
     cursor: pointer;
@@ -455,11 +523,14 @@ aside {
 }
 
 .search-hint-block {
-    color: #fff;
-    font-size: 16px;
-    font-weight: bold;
+    color: rgba(0, 0, 0, 1);
+    font-size: 20px;
+    font-family: 'Manrope';
+    /* font-weight: bold;*/
     width: Calc(100% - 40px);
-    padding: 10px 20px;
+   margin-top: 30px;
+    margin-bottom: 10px;
+    margin-left: 43px;
 }
 
 .link {
@@ -526,194 +597,200 @@ footer {
 .no-margin {
     margin: 0;
 }
+.price-list-view:hover .my-link-sign-up,
+.price-list-view .hiddenRecord:hover .my-link-sign-up {
+    color: white;
+    padding-right: 20px;
+} 
 
-@media only screen and (max-width: 550px) {
-    header,
-    footer {
-        width: 510px;
+    @media only screen and (max-width: 550px) {
+        header,
+        footer {
+            width: 510px;
+        }
+
+        body,
+        #form1 {
+            overflow: visible;
+        }
     }
 
-    body,
-    #form1 {
-        overflow: visible;
-    }
-}
+    @media only screen and (min-width: 240px) and (max-width: 480px) {
+        .container {
+            max-width: 480px;
+            min-width: 320px;
+            width: 100%;
+        }
 
-@media only screen and (min-width: 240px) and (max-width: 480px) {
-    .container {
-        max-width: 480px;
-        min-width: 320px;
-        width: 100%;
-    }
+        header,
+        footer {
+            width: Calc(100% - 40px);
+        }
 
-    header,
-    footer {
-        width: Calc(100% - 40px);
-    }
+        .search-button {
+            padding-right: 10px;
+        }
 
-    .search-button {
-        padding-top: 56px;
-    }
+        .link.space {
+            margin-left: -20px;
+        }
 
-    .link.space {
-        margin-left: -20px;
-    }
+        .service-name-td {
+            min-width: 170px;
+        }
 
-    .service-name-td {
-        min-width: 170px;
-    }
+        .title {
+            font-size: 14px;
+        }
 
-    .title {
-        font-size: 14px;
-    }
+        .comment {
+            font-size: 12px;
+        }
 
-    .comment {
-        font-size: 12px;
-    }
+        .service-price-td {
+            padding-right: 5px;
+        }
 
-    .service-price-td {
-        padding-right: 5px;
-    }
+        .price-list-view {
+            width: 100%;
+            /*padding: 0 5px;*/
+        }
 
-    .price-list-view {
-        padding: 0 5px;
-    }
+        h1 {
+            font-size: 23px;
+        }
 
-    h1 {
-        font-size: 23px;
-    }
-
-    .appointment-picking-title {
-        font-size: 19px;
-    }
-}
-
-@media only screen and (min-width: 240px) and (max-width: 359px) {
-    .row-for-photo,
-    .photo-container,
-    .photo {
-        width: 80px;
-        height: 80px;
+        .appointment-picking-title {
+            font-size: 19px;
+        }
     }
 
-    .photo-container {
-        padding: 20px 5px 0 5px;
-    }
-}
+    @media only screen and (min-width: 240px) and (max-width: 359px) {
+        .row-for-photo,
+        .photo-container,
+        .photo {
+            width: 80px;
+            height: 80px;
+        }
 
-@media only screen and (min-width: 240px) and (max-width: 319px) {
-    .container {
-        max-width: 319px;
-        min-width: 240px;
-    }
-
-    .row-for-photo {
-        width: 80px;
+        .photo-container {
+            padding: 20px 5px 0 5px;
+        }
     }
 
-    .photo-container,
-    .photo {
-        width: 60px;
-        height: 100%;
+    @media only screen and (min-width: 240px) and (max-width: 319px) {
+        .container {
+            max-width: 319px;
+            min-width: 240px;
+        }
+
+        .row-for-photo {
+            width: 80px;
+        }
+
+        .photo-container,
+        .photo {
+            width: 60px;
+            height: 100%;
+        }
+
+        .photo-container {
+            padding: 10px;
+            width: 60px;
+            height: 100%;
+            min-height: 90px;
+            min-width: 60px;
+        }
+
+        .price-list-view {
+            /* padding: 0 5px;*/
+        }
+
+        .title {
+            width: Calc(100% - 10px);
+            padding-left: 20px;
+        }
+
+        .service-price-td,
+        .appointment-button-container {
+            visibility: collapse;
+            padding: 0;
+        }
+
+        .additional-price-td,
+        .additional-appointment-button-container {
+            visibility: visible;
+        }
+
+        .service-name-td,
+        .additional-appointment-button-container {
+            width: 220px;
+        }
+
+        header {
+            font-size: 16px;
+        }
+
+        .main-additional-info {
+            font-size: 16px;
+        }
     }
 
-    .photo-container {
-        padding: 10px;
-        width: 60px;
-        height: 100%;
-        min-height: 90px;
-        min-width: 60px;
+    @media only screen and (min-width: 320px) and (max-width: 340px) {
+        header {
+            font-size: 18px;
+        }
     }
 
-    .price-list-view {
-        padding: 0 5px;
-    }
-
-    .title {
-        width: Calc(100% - 10px);
-    }
-
-    .service-price-td,
-    .appointment-button-container {
-        visibility: collapse;
-        padding: 0;
-    }
-
-    .additional-price-td,
-    .additional-appointment-button-container {
-        visibility: visible;
-    }
-
-    .service-name-td,
-    .additional-appointment-button-container {
-        width: 220px;
-    }
-
-    header {
-        font-size: 16px;
-    }
-
-    .main-additional-info {
-        font-size: 16px;
-    }
-}
-
-@media only screen and (min-width: 320px) and (max-width: 340px) {
-    header {
-        font-size: 18px;
-    }
-}
-
-@media only screen and (min-width: 768px) {
-    /*.main-content {
+    @media only screen and (min-width: 768px) {
+        /*.main-content {
         display: flex;
         flex-direction: column;
     }*/
 
-    .content-wrap {
-        /*width: Calc(100% - 300px);*/
-        width: 100%;
-        /*margin-left: 20px;*/
-    }
+        .content-wrap {
+            /*width: Calc(100% - 300px);*/
+            width: 100%;
+            /*margin-left: 20px;*/
+        }
 
-    /*aside {
+        /*aside {
         width: 300px;
     }*/
-}
-
-/*Специфичный для microsoft (IE) запрос, это нужно, потому что в IE не работает display: flex*/
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-    .container,
-    .main-content {
-        display: block;
     }
+    /*Специфичный для microsoft (IE) запрос, это нужно, потому что в IE не работает display: flex*/
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        .container,
+        .main-content {
+            display: block;
+        }
 
-    .container {
-        position: relative;
-        min-height: 100%;
-        background: #fff;
-    }
+        .container {
+            position: relative;
+            min-height: 100%;
+            background: #fff;
+        }
 
-    .content-wrap {
-        height: 100%;
-    }
+        .content-wrap {
+            height: 100%;
+        }
 
-    .main-content {
-        padding: 61px 0;
-    }
+        .main-content {
+            padding: 61px 0;
+        }
 
-    header,
-    footer {
-        position: absolute;
-        left: 0;
-        width: Calc(100% - 40px);
-    }
+        header,
+        footer {
+            position: absolute;
+            left: 0;
+            width: Calc(100% - 40px);
+        }
 
-    header {
-        top: 0;
-    }
+        header {
+            top: 0;
+        }
 
-    footer {
-        bottom: 0;
+        footer {
+            bottom: 0;
+        }
     }
-}

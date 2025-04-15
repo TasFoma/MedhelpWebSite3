@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Онлайн-запись на приём" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" 
+﻿<%@ Page Title="Онлайн-запись на приём" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true"
     CodeFile="AppointmentDatePicking.aspx.cs" Inherits="AppointmentDatePicking" Async="true" EnableEventValidation="false"
     ErrorPage="~/ErrorPage.aspx" %>
 
@@ -100,57 +100,57 @@
                     <ContentTemplate>
                         <div id="CallMeContainer" class="call-me-container" runat="server">
                             <div id="CallMe" runat="server">
-                            <div class="call-me-title">
-                                <span>Не нашли свободное время для записи?</span>
-                            </div>
-                            <div class="call-me-add-title">
-                                <span>Оставьте свой номер телефона, и мы Вам перезвоним.</span>
-                            </div>
-                                <div class="dialog-element center">
-                                <div>
-                                    <asp:CheckBox ID="CallMePersonalDataHandlingCheckBox" runat="server" Checked="true" />
-                                    <span>Я принимаю
-                                            <asp:LinkButton CausesValidation="False" ID="CallMeTermsLinkButton" runat="server" OnClientClick="ShowTermsForInfoTransfer(); return false;">условия передачи информации</asp:LinkButton></span>
-                                    <asp:CustomValidator ID="TermsCustomValidator" runat="server" Font-Size="0" ErrorMessage="Необходимо согласие на передачу информации"
-                                        OnServerValidate="CallMeCheckboxRequired_ServerValidate" ValidationGroup="CallMeValidationGroup"></asp:CustomValidator>
+                                <div class="call-me-title">
+                                    <span>Не нашли свободное время для записи?</span>
                                 </div>
-                            </div>
-                            <div class="call-me-phone-place">
-                                <%--<input type="tel" id="Tel1" placeholder="Номер телефона" runat="server" autopostback="false" />--%>
-                                <input id="callMePhoneTextBox" placeholder="Номер телефона" runat="server" autopostback="false" />
-                                <asp:RequiredFieldValidator ID="CallMePhoneRfv" runat="server"
-                                    ErrorMessage="Необходимо ввести номер телефона"
-                                    ControlToValidate="callMePhoneTextBox"
-                                    Display="Dynamic"
-                                    SetFocusOnError="True"
-                                    ToolTip="Обязательное поле" 
-                                    ValidationGroup="CallMeValidationGroup">
+                                <div class="call-me-add-title">
+                                    <span>Оставьте свой номер телефона, и мы Вам перезвоним.</span>
+                                </div>
+                                <div class="dialog-element center">
+                                    <div>
+                                        <asp:CheckBox ID="CallMePersonalDataHandlingCheckBox" runat="server" Checked="true" />
+                                        <span>Я принимаю
+                                            <asp:LinkButton CausesValidation="False" ID="CallMeTermsLinkButton" runat="server" OnClientClick="ShowTermsForInfoTransfer(); return false;">условия передачи информации</asp:LinkButton></span>
+                                        <asp:CustomValidator ID="TermsCustomValidator" runat="server" Font-Size="0" ErrorMessage="Необходимо согласие на передачу информации"
+                                            OnServerValidate="CallMeCheckboxRequired_ServerValidate" ValidationGroup="CallMeValidationGroup"></asp:CustomValidator>
+                                    </div>
+                                </div>
+                                <div class="call-me-phone-place">
+                                    <%--<input type="tel" id="Tel1" placeholder="Номер телефона" runat="server" autopostback="false" />--%>
+                                    <input id="callMePhoneTextBox" placeholder="Номер телефона" runat="server" autopostback="false" />
+                                    <asp:RequiredFieldValidator ID="CallMePhoneRfv" runat="server"
+                                        ErrorMessage="Необходимо ввести номер телефона"
+                                        ControlToValidate="callMePhoneTextBox"
+                                        Display="Dynamic"
+                                        SetFocusOnError="True"
+                                        ToolTip="Обязательное поле"
+                                        ValidationGroup="CallMeValidationGroup">
                                         <span style="color: red; font-weight: 600;">*</span>
-                                </asp:RequiredFieldValidator>
-                                <asp:RegularExpressionValidator ID="CallMePhoneRev" runat="server"
-                                    ErrorMessage="Введите действительный номер телефона"
-                                    ControlToValidate="callMePhoneTextBox"
-                                    ValidationExpression="\+7\(9\d{2}\)-\d{3}-\d{4}"
-                                    ToolTip="Некорректный номер телефона"
-                                    Display="Dynamic"
-                                    Enabled="true" 
-                                    ValidationGroup="CallMeValidationGroup">
+                                    </asp:RequiredFieldValidator>
+                                    <asp:RegularExpressionValidator ID="CallMePhoneRev" runat="server"
+                                        ErrorMessage="Введите действительный номер телефона"
+                                        ControlToValidate="callMePhoneTextBox"
+                                        ValidationExpression="\+7\(9\d{2}\)-\d{3}-\d{4}"
+                                        ToolTip="Некорректный номер телефона"
+                                        Display="Dynamic"
+                                        Enabled="true"
+                                        ValidationGroup="CallMeValidationGroup">
                                     <span style="color: red; font-weight: 600;">*</span>
-                                </asp:RegularExpressionValidator>
-                            </div>
-                            <div class="call-me-button">
-                                <asp:Button ID="callMeButton" runat="server" Text="Перезвоните мне" CssClass="simple-button" OnClick="CallMeButton_Click" ValidationGroup="CallMeValidationGroup"/>
-                            </div>
-                                <div style="color: red; font-size:18px; font-weight:600;">
+                                    </asp:RegularExpressionValidator>
+                                </div>
+                                <div class="call-me-button">
+                                    <asp:Button ID="callMeButton" runat="server" Text="Перезвоните мне" CssClass="simple-button" OnClick="CallMeButton_Click" ValidationGroup="CallMeValidationGroup" />
+                                </div>
+                                <div style="color: red; font-size: 18px; font-weight: 600;">
                                     <asp:ValidationSummary ID="callMeValidationSummary" runat="server" ValidationGroup="CallMeValidationGroup" />
                                 </div>
-                        </div>
+                            </div>
                             <div id="SuccessCallMe" class="success-call call-me-title" runat="server">
                                 <span>Ваша заявка принята.</span>
                                 <br />
                                 <span>Мы перезвоним Вам в ближайшее время.</span>
                             </div>
-                            </div>
+                        </div>
                     </ContentTemplate>
                 </asp:UpdatePanel>
                 <div id="errorLabelContainer" runat="server" style="padding: 20px; margin: 0 auto; text-align: center; font-size: 24px; font-weight: 600; color: #f00;" visible="false">
@@ -182,14 +182,14 @@
                                                 <div>
                                                     <asp:Button ID="informationButton" runat="server" Text="i" CssClass="simple-button information-button" />
                                                 </div>
-                                            <asp:Label ID="doctorIDLabel" runat="server" Text='<%#Eval("Id_Doctor") %>' Visible="false"></asp:Label>  
+                                                <asp:Label ID="doctorIDLabel" runat="server" Text='<%#Eval("Id_Doctor") %>' Visible="false"></asp:Label>
                                             </div>
                                             <div class="doctor-info" id="specialtyDiv" runat="server">
                                                 <p class="doctor-additional-info">Специальность: <span class="additional-span" id="specialtySpan" runat="server"></span></p>
                                             </div>
                                             <div class="doctor-info" id="experienceDiv" runat="server">
                                                 <p class="doctor-additional-info">Стаж: <span class="additional-span" id="experienceSpan" runat="server"></span></p>
-                                            </div>                                            
+                                            </div>
                                             <div class="doctor-info" id="additionalDiv" runat="server">
                                                 <p class="doctor-additional-info mh">Дополнительно: <span class="additional-span-dop-info taj" id="additionalSpan" runat="server"></span></p>
                                             </div>
@@ -197,12 +197,25 @@
                                     </tr>
                                     <tr>
                                         <td colspan="2">
-                                            <div class="record-buttons" id="divRecordButtons" runat="server">
-                                                <asp:Repeater ID="rptRecordingButton" runat="server" OnItemCommand="RptRecordingButton_ItemCommand">
-                                                    <ItemTemplate>
-                                                        <asp:Button CausesValidation="False" CssClass="recording-button" CommandArgument='<%# Container.DataItem %>' runat="server" Text='<%# Container.DataItem %>' />
-                                                    </ItemTemplate>
-                                                </asp:Repeater>
+                                            <div class="schedule-time">
+                                                <div class="change-week">
+                                                    <div id="prevTimeButton" runat="server" class="prev-week-button" onclick="prevTime(); return false;"></div>
+                                                </div>
+                                                <div class="record-buttons" id="divRecordButtons" runat="server">
+                                                    <asp:Repeater ID="rptRecordingButton" runat="server" OnItemCommand="RptRecordingButton_ItemCommand">
+                                                        <ItemTemplate>
+                                                            <asp:Button
+                                                                CausesValidation="False"
+                                                                CssClass="time-button"
+                                                                CommandArgument='<%# Container.DataItem %>'
+                                                                runat="server"
+                                                                Text='<%# Container.DataItem %>' />
+                                                        </ItemTemplate>
+                                                    </asp:Repeater>
+                                                </div>
+                                                <div class="change-week">
+                                                    <div id="nextTimeButton" runat="server" class="next-week-button" onclick="nextTime(); return false;"></div>
+                                                </div>
                                             </div>
                                         </td>
                                     </tr>
@@ -268,7 +281,7 @@
                                     Display="Dynamic"
                                     Enabled="false"
                                     SetFocusOnError="True"
-                                    ToolTip="Обязательное поле" 
+                                    ToolTip="Обязательное поле"
                                     ValidationGroup="ModalDialogValidationGroup">
                                         <span style="color: red; font-weight: 600;">*</span>
                                 </asp:RequiredFieldValidator>
@@ -278,11 +291,11 @@
                                     ValidationExpression="\+7\(9\d{2}\)-\d{3}-\d{4}"
                                     ToolTip="Некорректный номер телефона"
                                     Display="Dynamic"
-                                    Enabled="false" 
+                                    Enabled="false"
                                     ValidationGroup="ModalDialogValidationGroup">
                                     <span style="color: red; font-weight: 600;">*</span>
                                 </asp:RegularExpressionValidator>
-                                <asp:Button ID="confirmPhoneButton" CssClass="simple-button" runat="server" Text="Получить код" OnClick="ConfirmPhoneButton_Click" ValidationGroup="ModalDialogValidationGroup"/>
+                                <asp:Button ID="confirmPhoneButton" CssClass="simple-button" runat="server" Text="Получить код" OnClick="ConfirmPhoneButton_Click" ValidationGroup="ModalDialogValidationGroup" />
 
                             </div>
                             <div class="dialog-element center">
@@ -297,7 +310,7 @@
                             <div class="dialog-element center">
                                 <asp:TextBox ID="codeTextBox" runat="server" placeHolder="Введите код" AutoCompleteType="Disabled"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="codeRfv" runat="server" ErrorMessage="Необходимо ввести код подтверждения" ControlToValidate="codeTextBox" ToolTip="Обязательное поле" Enabled="false" Display="Static" ValidationGroup="ModalDialogValidationGroup"><span style="color: red; font-weight: 600;">*</span></asp:RequiredFieldValidator>
-                                <asp:Button CssClass="simple-button" ID="codeConfirmButton" runat="server" Text="Записаться" OnClick="CodeConfirmButton_Click" ValidationGroup="ModalDialogValidationGroup"/>
+                                <asp:Button CssClass="simple-button" ID="codeConfirmButton" runat="server" Text="Записаться" OnClick="CodeConfirmButton_Click" ValidationGroup="ModalDialogValidationGroup" />
                             </div>
                             <div class="dialog-element center">
                                 <asp:Label ID="phoneInfoLabel" CssClass="tooltip" runat="server"></asp:Label>
@@ -311,7 +324,7 @@
                             </div>
                         </div>
                         <div class="dialog-element center">
-                            <asp:ValidationSummary ID="fieldsValidationSummary" runat="server" ValidationGroup="ModalDialogValidationGroup"/>
+                            <asp:ValidationSummary ID="fieldsValidationSummary" runat="server" ValidationGroup="ModalDialogValidationGroup" />
                         </div>
 
                         <div class="dialog-element center">

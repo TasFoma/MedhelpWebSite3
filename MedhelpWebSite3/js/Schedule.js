@@ -15,6 +15,15 @@ function PrevWeek(go) {
     if (prevButton != null)
         prevButton.click();
 }
+function prevTime() {
+    const container = document.getElementById('divRecordButtons');
+    container.scrollBy({ left: -100, behavior: 'smooth' });
+}
+
+function nextTime() {
+    const container = document.getElementById('divRecordButtons');
+    container.scrollBy({ left: 100, behavior: 'smooth' });
+}
 
 function ChangeFormatRepeaterButtons(checkedButton) {
     $('.branch-container input').removeClass('checked-branch');

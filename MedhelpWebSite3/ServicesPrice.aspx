@@ -35,15 +35,14 @@
     <div id="backgroundDiv" runat="server" style="background: #fff; height: 100%;">
         <div id="searchBlock" runat="server" class="search-block">
             <div class="inner-search-block">
-                <div class="search-button-container">
-                    <button enableviewstate="false" runat="server" id="roleSearchButton" onserverclick="RoleSearchButton_ServerClick" class="simple-button search-button"><i class="fa fa-search"></i></button>
-                </div>
+
                 <div class="search-fields">
                     <div class="search-hint-block">
                         <asp:Label ID="hintSearchByPriceLabel" runat="server" Text="Воспользуйтесь поиском по прейскуранту"></asp:Label>
                     </div>
-                    <div class="search-input">
+                    <div class="search-input-container">
                         <asp:TextBox EnableViewState="false" ID="SpecSearchTextBox" runat="server" placeholder="Поиск по услугам" CssClass="search-textbox"></asp:TextBox>
+                        <button enableviewstate="false" runat="server" id="roleSearchButton" onserverclick="RoleSearchButton_ServerClick" class="search-button"><i class="fa fa-search search-icon"></i></button>
                     </div>
                 </div>
             </div>
@@ -51,8 +50,8 @@
                 <div class="search-hint-block">
                     <asp:Label ID="hintSearchBySpecialtyLabel" runat="server" Text="Или выберите специальность"></asp:Label>
                 </div>
-                <asp:DropDownList ID="SpecCheckDropDownList" runat="server" CssClass="dropDownList" Font-Bold="True" AutoPostBack="True" OnSelectedIndexChanged="RoleCheckDropDownList_SelectedIndexChanged" AppendDataBoundItems="True">
-                    <asp:ListItem Selected="true" Value="0" Text="Выбор специальности"></asp:ListItem>
+                <asp:DropDownList ID="SpecCheckDropDownList" runat="server" CssClass="dropDownList custom-select" Font-Bold="True" AutoPostBack="True" OnSelectedIndexChanged="RoleCheckDropDownList_SelectedIndexChanged" AppendDataBoundItems="True">
+                    <asp:ListItem Selected="true" Value="0" CssClass="search-textbox" Text="Выбор специальности"></asp:ListItem>
                 </asp:DropDownList>
             </div>
         </div>
@@ -70,28 +69,29 @@
                                         <td class="service-name-td">
                                             <h3 class="title"><%# Eval("Title") %></h3>
                                         </td>
-                                        <td class="service-price-td" data-service-id='<%# Eval("Id_Service") %>'>
+                                        <td class="service-price-td" style="padding-right:20px;" data-service-id='<%# Eval("Id_Service") %>'>
                                             <%# Eval("Value", "{0} руб.") %>
                                         </td>
                                     </tr>
                                     <tr id="FirstHiddenRecord" class="hiddenRecord hidden-record">
                                         <td colspan="2" class="appointment-button-container">
-                                            <div class="comment" style="width: 100%; display: <%# !string.IsNullOrEmpty(Eval("Komment").ToString()) ? "block" : "none" %>;">
-                                                <%# Eval("Komment") %>
-                                            </div>
-                                            <div style="float: right;">
+                                            <div style="display: flex; justify-content: center; align-items: center;">
+                                                <div class="comment" style="width: 100%; padding-left:20px; display: <%# !string.IsNullOrEmpty(Eval("Komment").ToString()) ? "block" : "none" %>;">
+                                                    <%# Eval("Komment") %>
+                                                </div>
                                                 <asp:LinkButton ID="signUpLinkButton" runat="server" CssClass="my-link-sign-up"
                                                     OnClick="AdditSignUpLinkButton_Click"
                                                     CommandArgument='<%# Eval("Id_Service") %>'>Записаться</asp:LinkButton>
                                             </div>
                                         </td>
                                     </tr>
+
                                 </table>
                             </div>
                         </ItemTemplate>
                     </asp:ListView>
                 </div>
-                 
+
             </div>
         </div>
         <div id="haventServicesDiv" runat="server" style="padding: 20px; margin: 0 auto; text-align: center; font-size: 16px;" visible="false">

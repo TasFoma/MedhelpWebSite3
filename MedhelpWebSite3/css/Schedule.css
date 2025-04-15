@@ -1,7 +1,9 @@
 ﻿.hidden {
     display: none;
 }
+.time-button{
 
+}
 .visible {
     display: block;
 }
@@ -33,7 +35,7 @@
     display: flex;
 }
 
-.record-buttons {
+.record-buttons, schedule-time {
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -49,7 +51,7 @@
     justify-content: flex-start;
 }
 
-.schedule {
+.schedule, schedule-time {
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -59,9 +61,14 @@
     justify-content: space-around;
     width: 100%;
 }
-
+.schedule-time {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
 .day-of-week,
-.next-week {
+.next-week, .time-button {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 auto;
     -webkit-flex: 0 0 auto;
@@ -70,7 +77,7 @@
     margin: 0 5px;
 }
 
-.day-of-week {
+.day-of-week, .time-button {
     width: 9%;
     min-width: 70px;
 }
@@ -103,10 +110,19 @@
     top: 45%;
     left: 15%;
 }
+.next-time-button {
+    position: absolute;
+    height: 0;
+    width: 0;
+    border: 15px solid transparent;
+    border-left: 15px solid #258cd1;
+    top: 45%;
+    left: 15%;
+}
 
 .day-of-week-button,
-.recording-button {
-    background-color: #66bb6a;
+.recording-button, .time-button {
+    background-color: #258cd1; /*ЗЕЛённый*/
 }
 
 .day-of-week-button {
@@ -120,11 +136,17 @@
     font-size: 18px;
     color: #000;
 }
+.time-button {
+    border-radius: 5px;
+    border: 2px solid #99c39b; 
+    font-size: 18px;
+    color: #000;
+}
 
     .day-of-week-button:hover,
     .prev-week-button:hover,
     .next-week-button:hover,
-    .recording-button:hover {
+    .recording-button:hover, .time-button:hover {
         cursor: pointer;
     }
 
@@ -147,7 +169,7 @@
 
 .lo-business-day {
     border-color: #569f59;
-    background: #66bb6a;
+    background: #258cd1;
 }
 
 .medium-business-day {
@@ -260,7 +282,7 @@
 
 #MainContentPlaceHolder_CheckedServiceTitle {
     margin: 0;
-    margin-top: 5px;
+    /*margin-top: 5px;*/
     font-weight: bold;
 }
 
@@ -301,7 +323,7 @@
 
 @media (max-width: 605px) {
     .day-of-week,
-    .next-week {
+    .next-week, .time-button {
         margin: 0;
     }
 }
@@ -318,7 +340,7 @@
     }
 
     .day-of-week,
-    .next-week {
+    .next-week, .time-button {
         height: 66px;
         margin: 0 1px;
     }
@@ -327,7 +349,7 @@
         height: 45px;
     }
 
-    .day-of-week {
+    .day-of-week, .time-button {
         width: 6%;
         min-width: 45px;
     }
@@ -344,6 +366,12 @@
     }
 
     .next-week-button {
+        border: 10px solid transparent;
+        border-left: 10px solid #258cd1;
+        top: 50%;
+        left: 15%;
+    }
+    .next-time-button {
         border: 10px solid transparent;
         border-left: 10px solid #258cd1;
         top: 50%;
@@ -369,7 +397,7 @@
     }
 
     .day-of-week,
-    .next-week {
+    .next-week, .time-button {
         height: 61px;
         margin: 0 1px;
     }
@@ -378,7 +406,7 @@
         height: 40px;
     }
 
-    .day-of-week {
+    .day-of-week, .time-button {
         width: 5%;
         min-width: 40px;
     }
@@ -399,7 +427,7 @@
     }
 
     .day-of-week,
-    .next-week {
+    .next-week, .time-button {
         height: 49px;
         margin: 0 0.5px;
     }
@@ -410,7 +438,7 @@
         font-size: 14px;
     }
 
-    .day-of-week {
+    .day-of-week, .time-button {
         width: 4%;
         min-width: 28px;
     }
@@ -423,7 +451,7 @@
         min-width: 60px;
     }
 
-    .schedule {
+    .schedule, schedule-time {
         padding-bottom: 10px;
     }
 }
