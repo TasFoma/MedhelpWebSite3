@@ -1,4 +1,7 @@
-﻿$(document).ready(function () {
+﻿document.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
+}); 
+$(document).ready(function () {
     $(window).resize(function () {
         //SetSearchBlockStartPosition()
         ResetHiddenRecordsVisibility();

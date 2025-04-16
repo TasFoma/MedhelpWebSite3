@@ -1,4 +1,7 @@
-﻿function AddMaskToCallMeTextBox() {
+﻿document.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
+});
+function AddMaskToCallMeTextBox() {
     $('#MainContentPlaceHolder_callMePhoneTextBox').mask("+7(999)-999-9999", { autoclear: false });
 };
 

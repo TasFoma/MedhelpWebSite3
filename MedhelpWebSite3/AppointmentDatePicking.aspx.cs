@@ -245,36 +245,56 @@ public partial class AppointmentDatePicking : Page
 
     private void FormatDayButton(DateTime date, DateTime today, Button button, bool valueIsNull, int buttonNumber)
     {
+        Label label = null;
+        switch (buttonNumber)
+        {
+            case 0: label = MonLabel; break;
+            case 1: label = TueLabel; break;
+            case 2: label = WedLabel; break;
+            case 3: label = ThuLabel; break;
+            case 4: label = FriLabel; break;
+            case 5: label = SatLabel; break;
+            case 6: label = SunLabel; break;
+        }
+
         BaseEntity<ScheduleByService> data = null;
         if (!valueIsNull)
             data = GetSchedule();
-        if (data == null || data.Error || date < today || data.Response.Count == 0
-            || !data.Response.Any(row => DateTime.Parse(row.Adm_Day).Date == date/* && row.Adm_Time != null && row.Adm_Time.Count > 0*/))
+
+        if (label != null)
         {
-            button.CssClass = $"{baseClassDayButton} {passedClass}";
-            button.Enabled = false;
-        }
-        else
-        {
-            var amount = data.Response.Where(row => DateTime.Parse(row.Adm_Day).Date == date)
-                .Sum(time => time.Adm_Time != null ? time.Adm_Time.Count : 0);
-            switch (amount)
+            label.CssClass = "day-of-week-label";
+
+            if (data == null || data.Error || date < today || data.Response.Count == 0
+                || !data.Response.Any(row => DateTime.Parse(row.Adm_Day).Date == date))
             {
-                case 0:
-                    button.CssClass = $"{baseClassDayButton} {passedClass}";
-                    button.Enabled = false;
-                    break;
-                default:
-                    button.CssClass = $"{baseClassDayButton} {loBusinessClass}";
-                    DateTime dt;
-                    if (!DateTime.TryParse(checkedDayLabel.Text, out dt))
-                    {
-                        //FormatDayButton(button);
-                        var buttonDate = GetButtonDate(buttonNumber);
-                        DayOfWeekButtonClick(buttonDate, button);
-                    }
-                    button.Enabled = true;
-                    break;
+                button.CssClass = $"{baseClassDayButton} {passedClass}";
+                button.Enabled = false;
+                label.CssClass += " disabled-day-of-week";
+            }
+            else
+            {
+                var amount = data.Response.Where(row => DateTime.Parse(row.Adm_Day).Date == date)
+                    .Sum(time => time.Adm_Time != null ? time.Adm_Time.Count : 0);
+
+                switch (amount)
+                {
+                    case 0:
+                        button.CssClass = $"{baseClassDayButton} {passedClass}";
+                        button.Enabled = false;
+                        label.CssClass += " disabled-day-of-week";
+                        break;
+                    default:
+                        button.CssClass = $"{baseClassDayButton} {loBusinessClass}";
+                        DateTime dt;
+                        if (!DateTime.TryParse(checkedDayLabel.Text, out dt))
+                        {
+                            var buttonDate = GetButtonDate(buttonNumber);
+                            DayOfWeekButtonClick(buttonDate, button);
+                        }
+                        button.Enabled = true;
+                        break;
+                }
             }
         }
     }

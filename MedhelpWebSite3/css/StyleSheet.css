@@ -25,10 +25,13 @@ h3,
 .title {
     font-size: 16px;
     font-weight: normal;
+    font-family: 'Manrope';
     margin: 5px 0;
 }
 
 .post-title {
+    font-weight: normal;
+    font-family: 'Manrope';
     font-size: 17px;
     margin: 10px 10px 10px 0;
     /*width: 100%;*/
@@ -103,7 +106,7 @@ header {
     -ms-flex: 0 0 auto;
     flex: 0 0 auto;
     padding: 20px;
-    margin-bottom: 5px;
+   /* margin-bottom: 5px;*/
     background: #258cd1;
     color: white;
   /* font-weight: 600;*/ 
@@ -137,6 +140,9 @@ header {
 }
 
 .content-wrap {
+    display: flex;
+    flex-direction: column; /* Слои, подобные торту */
+    height: 100vh; /* Высота соответствует видимой области экрана */
     -webkit-box-flex: 1;
     -ms-flex: 1 1 100%;
     -webkit-flex: 1 1 100%;
@@ -144,7 +150,11 @@ header {
     padding: 0;
     /*margin-bottom: 20px;*/
     background: white;
+    /*   background-color: rgba(246, 246, 246, 1);*/
     height: 100%;
+    display: flex;
+    flex-direction: column; /* Слои, подобные торту */
+    height: 100vh; /* Высота соответствует видимой области экрана */
 }
 
 aside {
@@ -547,7 +557,7 @@ footer {
     -webkit-flex: 0 0 auto;
     -ms-flex: 0 0 auto;
     flex: 0 0 auto;
-    margin-top: 5px;
+  /* margin-top: 5px;*/ 
     padding: 10px;
     /*background: green;*/
     background: #4c5866;
@@ -748,7 +758,7 @@ footer {
         flex-direction: column;
     }*/
 
-        .content-wrap {
+        .content-wrap { 
             /*width: Calc(100% - 300px);*/
             width: 100%;
             /*margin-left: 20px;*/
@@ -773,6 +783,7 @@ footer {
 
         .content-wrap {
             height: 100%;
+            background-color: rgba(246, 246, 246, 1);
         }
 
         .main-content {
