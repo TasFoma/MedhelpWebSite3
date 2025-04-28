@@ -1,4 +1,77 @@
-﻿.modal-dialog-background {
+﻿#MainContentPlaceHolder_personalDataHandlingCheckBox {
+    width: 45px;
+    height: 45px;
+    margin-right:25px;
+    accent-color: #258cd1;
+    cursor: pointer;
+    border-radius:15px;
+}
+.num-phone-but {
+    word-spacing: 5px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.js-phoneMask {
+    margin-right: 10px;
+    height: 68px;
+    width: 50%;
+    border-radius: 15px;
+    border-color: rgba(223, 223, 223, 1);
+    padding-left: 16px;
+    font-size: 20px;
+    background-color: rgba(246, 246, 246, 1);
+}
+.checkBox-text {
+    margin-left: 40px;
+    margin-top: 20px;
+    font-size: 20px;
+}
+/*#MainContentPlaceHolder_confirmPhoneLabel {
+    padding-left: 20%;
+    padding-right: 20%;
+}*/
+.termsLinkButton {
+    text-decoration-line: none;
+    color: black;
+}
+.wrapper {
+    position: relative;
+    font-size: 14px;
+}
+
+    .wrapper > input {
+        background-color: transparent;
+        padding: 4px;
+    }
+
+    .wrapper > .placeholder {
+        position: absolute;
+        left: 0;
+        font-size: inherit;
+        color: #d8d8d8;
+        padding: 7px;
+        z-index: -1;
+    }
+#MainContentPlaceHolder_confirmPhoneLabel {
+    display: flex; 
+}
+.serviceName {
+    font-weight: bold;
+    font-size:25px;
+}
+ .dialog-element.center {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 10%;
+    height: 80px;
+}
+.modal-dialog-background {
     position: fixed;
     top: 0;
     right: 0;
@@ -8,31 +81,64 @@
     background: grey;
     z-index: 1;
 }
-
+.dialog-hr {
+    border: none;
+    border-top: 1px solid #cccccc;
+    margin: 8px 0;
+    opacity: 0.7;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.simple-button {
+    background-color: rgba(254, 105, 99, 1);
+    color: white;
+    height: 70px;
+    width: 50%;
+}
+.checkBox-button {
+    height: 25px;
+    width: 25px;
+    min-width: 25px;
+    min-height: 25px;
+}
 .modal-dialog {
     position: fixed;
-    left: Calc(50% - 150px);
-    top: Calc(50% - 125px);
-    background: #e6e6e6;
+    /* left: Calc(50% - 150px);
+    top: Calc(50% - 125px);*/
+    background: #258cd1; /* #e6e6e6*/
     z-index: 2;
     display: none;
-    width: 542.333px;
-    max-width: 600px;
+    /*  width: 542.333px;
+    max-width: 600px;*/
+    width: 60%;
+    height: 90%;
 }
-
+input[type="checkbox"].checkBox-button {
+    width: 25px;
+    height: 25px;
+    min-width: 25px;
+    min-height: 25px;
+}
 .window {
-    border: 2px solid #bbbbbb;
+    background-color: white;
+    height:85%; 
     color: #000;
     padding-bottom: 10px;
+}
+window-style {
+    padding-left: 20%;
+    padding-right: 20%;
 }
 
 .dialog-title,
 .dialog-element {
-    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    /* padding: 10px;*/
 }
 
 .dialog-element {
-    padding-bottom: 0;
+   /*padding-bottom: 0;*/ 
 }
 
 .dialog-element,
@@ -54,6 +160,7 @@
 
 .checked-value {
     font-weight: 300;
+    font-size: 25px;
 }
 
 .dialog-button {
@@ -79,8 +186,10 @@ h3:hover {
 }
 
 .tooltip {
-    font-size: 12px;
+    font-size: 20px;
     font-weight: 300;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .dialog-element:hover,
@@ -103,9 +212,10 @@ h3:hover {
 .inputPersonalInfo,
 .checkPatientForm {
     display: none;
+    width: 100%;
 }
 
-    .phoneConfirmForm .dialog-element {
+    .phoneConfirmForm {
         padding: 0;
         width: 100%;
     }
@@ -164,13 +274,35 @@ h3:hover {
     }
 
 @media only screen and (min-width: 240px) and (max-width: 319px) {
+    .simple-button {
+        height: 20px;
+        padding: 10px 4px;
+    }
+    .num-phone-but {
+        height: 20px;
+    }
+    .js-phoneMask {
+        height: 20px;
+        font-size: 10px;
+    }
     .modal-dialog {
+    height: 90%;
+}
+    .dialog-element.center { 
+        height: 0px;
+    }
+    #MainContentPlaceHolder_confirmPhoneLabel {
+        display: flex;
+        font-size: 10px !important;
+    }
+    .modal-dialog {
+        /*height: 60%;*/
         min-width: 240px;
         max-width: 240px;
     }
 
     .dialog-element {
-        padding: 5px 5px 0 5px;
+       /* padding: 5px 5px 0 5px;*/
         width: Calc(100% - 10px);
     }
 
@@ -208,11 +340,61 @@ h3:hover {
 }
 
 @media only screen and (min-width: 320px) and (max-width: 480px) {
+    .num-phone-but {
+        height: 20px;
+    }
+    .simple-button {
+        height: 20px;
+    }
+    .js-phoneMask {
+        height: 20px;
+        font-size:10px;
+    }
+    .dialog-element.center {
+        height: 0px;
+    }
+    .modal-dialog {
+        height: 90%;
+    }
+    #MainContentPlaceHolder_confirmPhoneLabel {
+        display: flex;
+        font-size: 10px !important;
+    }
+    .d .noteSize{
+        font-size:10px !important;
+    }
+    .d .note-zapis {
+        font-size: 20px !important;
+    }
+    .serviceName {
+        font-size: 15px !important;
+    }
+   .dialog-title .dialog-title-note {
+        font-size: 15px !important;
+    }
+    .checked-value {
+        font-size: 15px !important;
+    }
+    .checkBox-text {
+        display: flex;
+        font-size: 10px !important;
+        margin-left: 20px;
+        margin-top: 0px;
+    }
     .modal-dialog {
         min-width: 320px;
         max-width: 320px;
+        /* height: 60%;
+        height:50%;*/
     }
-
+    #MainContentPlaceHolder_personalDataHandlingCheckBox {
+        width: 20px;
+        height: 20px;
+        margin-right: 25px;
+        accent-color: #258cd1;
+        cursor: pointer;
+        border-radius: 15px;
+    }
     .simple-button,
     .dialog-button {
         font-size: 10px;
@@ -238,6 +420,10 @@ h3:hover {
 }
 
 @media only screen and (max-height: 514px) and (max-width: 360px) {
+    #MainContentPlaceHolder_confirmPhoneLabel {
+        display: flex;
+        font-size: 10px !important;
+    }
     .terms-info {
         margin: 2px 0;
         font-weight: 300;
@@ -245,7 +431,7 @@ h3:hover {
 }
 
 @media only screen and (max-height: 394px) {
-    .dialog-element, .dialog-title {
+  .dialog-title {
         width: Calc(100% - 10px);
         padding: 5px;
     }
@@ -255,7 +441,7 @@ h3:hover {
     }
 
     .dialog-element {
-        padding-bottom: 0;
+       /* padding-bottom: 0;*/
         font-size: 12px;
     }
 }
@@ -268,7 +454,7 @@ h3:hover {
 
 @media only screen and (max-height: 315px) {
     .dialog-element {
-        padding: 5px 10px 0 10px;
+      /*  padding: 5px 10px 0 10px;*/
     }
 
     .dialog-title p {
@@ -278,6 +464,7 @@ h3:hover {
 
 @media only screen and (min-width: 481px) and (max-width: 542.333px) {
     .modal-dialog {
+     /*   height: 60%;*/
         min-width: 480px;
         max-width: 480px;
     }

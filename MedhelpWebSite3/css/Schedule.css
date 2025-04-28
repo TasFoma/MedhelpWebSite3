@@ -12,6 +12,7 @@ span, h1, h3 {
     height: 70px;
 }
 .time-button{
+  /*  min-width:70px;*/
 
 }
 .visible {
@@ -148,6 +149,7 @@ span, h1, h3 {
     display: flex;
     align-items: center;
     font-weight: normal;
+    min-width: auto;
     font-family: 'Manrope';
 }
 .disabled-day-of-week {
@@ -161,7 +163,8 @@ span, h1, h3 {
 }
 
 .lo-business-day {
-    border-color: #569f59;
+    color:white;
+    /*border-color: #569f59;*/
     background: #258cd1;
 }
 
@@ -186,6 +189,7 @@ span, h1, h3 {
 }
 
 .branch-container {
+    overflow-x:scroll;
     display: flex;
     align-items: center;
     background-color: white;
@@ -203,7 +207,7 @@ span, h1, h3 {
     border-radius: 5px;
     margin-bottom: 20px;
     border: 2px solid transparent;
-    width: auto;
+    min-width: auto;
     font-weight: normal;
     min-width: 10%;
     text-decoration: none;
@@ -217,11 +221,12 @@ span, h1, h3 {
 
 .checked-branch {
     display: flex;
+    width: auto;
     align-items: center;
     font-weight: normal;
     font-family: 'Manrope';
     background: rgba(246, 246, 246, 1);
-   /* margin-bottom: 20px;*/
+    /* margin-bottom: 20px;*/
     color: black;
     font-weight: normal;
     text-decoration: none;
@@ -241,6 +246,7 @@ span, h1, h3 {
     height: 50px;
     font-size: 18px;
     padding-left: 3px;
+    min-width:auto;
     padding-right: 3px;
 }
 
@@ -331,6 +337,10 @@ span, h1, h3 {
 }
 
 @media (max-width: 605px) {
+    .window {
+        overflow-y: scroll;
+        height: 60%;
+    }
     .day-of-week,
     .next-week, .time-button {
         font-weight: normal;
@@ -345,6 +355,10 @@ span, h1, h3 {
 }
 
 @media only screen and (min-width: 240px) and (max-width: 480px) {
+    .window {
+        overflow-y: scroll;
+        height: 60%;
+    }
     body,
     #form1 {
         overflow-x: hidden;
@@ -368,8 +382,16 @@ span, h1, h3 {
     }
 
     .day-of-week-button {
+        width:20px;
         margin-bottom: 5px; 
         height: 45px;
+    }
+    .day-of-week-button {
+        margin-bottom: 5px;
+        height: 28px;
+        padding: 5px;
+        font-size: 14px;
+        min-width: 30px;
     }
 
     .day-of-week, .time-button {
@@ -378,8 +400,8 @@ span, h1, h3 {
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 6%;
-        min-width: 100px;
+        width: 1%;
+        min-width: 20px;
         margin-right: 5px;
     }
 
@@ -409,11 +431,23 @@ span, h1, h3 {
     }
 
     .recording-button {
-        min-width: 70px;
+        min-width: auto;
+    }
+    .schedule {
+        display: flex;
+        /*  display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(44px, 1fr));*/
+        gap: 4px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 8px;
     }
 }
 
 @media only screen and (min-width: 320px) and (max-width: 345px) {
+    .window {
+        overflow-y: scroll;
+    }
     .container {
         max-width: 345px;
     }
@@ -429,12 +463,22 @@ span, h1, h3 {
         height: 50px;
         margin: 0 1px;
     }
-
+    .day-of-week-button {
+        width: 20px;
+        margin-bottom: 5px;
+        height: 45px;
+    }
     .day-of-week-button {
         margin-bottom: 5px;
         height: 20px;
     }
-
+    .day-of-week-button {
+        margin-bottom: 5px;
+        height: 28px;
+        padding: 5px;
+        font-size: 14px;
+        min-width: 30px;
+    }
     .day-of-week, .time-button {
         font-weight: normal;
         font-family: 'Manrope';
@@ -442,7 +486,7 @@ span, h1, h3 {
         flex-direction: column;
         align-items: center;
         width: 5%;
-        min-width: 100px;
+        min-width: 20px;
     }
 
     .hint-container {
@@ -456,6 +500,10 @@ span, h1, h3 {
 }
 
 @media only screen and (min-width: 240px) and (max-width: 319px) {
+   
+    .window {
+        overflow-y: scroll;
+    }
     .container {
         max-width: 319px;
         min-width: 240px;
@@ -472,12 +520,12 @@ span, h1, h3 {
         height: 50px;
         margin: 0 0.5px;
     }
-
     .day-of-week-button {
         margin-bottom: 5px;
         height: 28px;
-        padding: 0;
+        padding: 5px;
         font-size: 14px;
+        min-width: 30px;
     }
 
     .day-of-week, .time-button {
@@ -496,7 +544,7 @@ span, h1, h3 {
     }
 
     .recording-button {
-        min-width: 60px;
+        min-width: auto;
     }
 
     schedule-time {

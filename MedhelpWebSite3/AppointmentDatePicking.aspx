@@ -22,39 +22,39 @@
     <asp:Label ID="admissionLbl" runat="server" Text="" Visible="false"></asp:Label>
     <asp:Label ID="commonMaxAppLabel" runat="server" Text="0" Visible="false"></asp:Label>
     <asp:Label ID="serviceMaxAppLabel" runat="server" Text="0" Visible="false"></asp:Label>
-    <div class="page-title" style="background-color:white;text-decoration:none; height:60px; display:flex;align-items: center; justify-content: center;">
-        <h1>ОФОРМЛЕНИЕ ЗАПИСИ НА ПРИЁМ</h1>
+    <div class="page-title" style="background-color: white; text-decoration: none; height: 60px; display: flex; align-items: center; justify-content: center;">
+        <h1>ОФОРМЛЕНИЕ  <br />ЗАПИСИ НА ПРИЁМ</h1>
     </div>
-    <div class="checked-service-container" style="background-color:white;">
+    <div class="checked-service-container" style="background-color: white;">
         <asp:Label CssClass="post-title" ID="checkedServiceLabel" runat="server" Text="Выбранная услуга:"></asp:Label>
-        <span style="font-size: 17px; font-weight: normal; color:#258cd1;" id="CheckedServiceTitle" runat="server"></span>
+        <span style="font-size: 17px; font-weight: normal; color: #258cd1;" id="CheckedServiceTitle" runat="server"></span>
     </div>
-    <div class="schedule-container" style="background-color:rgba(246, 246, 246, 1);   flex-grow: 1;">
+    <div class="schedule-container" style="background-color: rgba(246, 246, 246, 1); flex-grow: 1;">
         <asp:UpdatePanel ID="UpdatePanelScheduleContainer" runat="server">
             <%--<Triggers>
                 <asp:PostBackTrigger ControlID="TueButton" /> 
             </Triggers>--%>
             <ContentTemplate>
-                <div class="branch-container" >
+                <div class="branch-container">
                     <asp:Label CssClass="post-title" ID="availabledBranchesLabel" runat="server" Text="Доступные филиалы:"></asp:Label>
                     <asp:Repeater ID="rptBranchButton" runat="server" OnItemCommand="RptBranchButton_ItemCommand">
-                        <ItemTemplate>
+                        <ItemTemplate> 
                             <asp:Button CausesValidation="False" CssClass="branch-button" ID="branchButton" CommandArgument='<%# DataBinder.Eval(Container.DataItem, "BranchID") %>' runat="server" Text='<%# DataBinder.Eval(Container.DataItem, "BranchName") %>' />
                         </ItemTemplate>
                     </asp:Repeater>
                     <asp:Label ID="checkedBranchIDLabel" runat="server" Visible="false"></asp:Label>
                 </div>
-                <div class="appointment-picking-title" style="font-weight: bold; text-decoration:none; margin-top:20px;">
+                <div class="appointment-picking-title" style="font-weight: bold; text-decoration: none; margin-top: 20px;">
                     <asp:Label ID="appointmentPickingLabel" runat="server" Text="ВЫБЕРИТЕ ДАТУ ДЛЯ ЗАПИСИ"></asp:Label>
                 </div>
                 <asp:UpdatePanel ID="UpdatePanelSchedule" runat="server">
                     <ContentTemplate>
-                        <div class="month-container" >
+                        <div class="month-container">
                             <asp:Label CssClass="month-label" ID="monthLabel" runat="server"></asp:Label>
                         </div>
                         <div class="schedule">
                             <div class="change-week">
-                                <div id="prevButton" runat="server" class="prev-week-button" onclick="javascript:PrevWeek(true); return true;">	&#8249</div>
+                                <div id="prevButton" runat="server" class="prev-week-button" onclick="javascript:PrevWeek(true); return true;">&#8249</div>
                             </div>
                             <div class="day-of-week">
                                 <asp:Label CssClass="day-of-week-label" ID="MonLabel" runat="server" Text="ПН"></asp:Label>
@@ -85,7 +85,7 @@
                                 <asp:Button DayOfWeekIndex="6" CausesValidation="False" CssClass="day-of-week-button disabled-day" ID="SunButton" runat="server" OnClick="DayOfWeek_Click" />
                             </div>
                             <div class="change-week">
-                                <div id="nextButton" runat="server" class="next-week-button" onclick="javascript:NextWeek(true); return true;">	&#8250</div>
+                                <div id="nextButton" runat="server" class="next-week-button" onclick="javascript:NextWeek(true); return true;">&#8250</div>
                             </div>
 
                             <asp:Button CausesValidation="False" ID="nextWeekButton" CssClass="hidden" runat="server" Text="Next" OnClick="NextWeekButton_Click" />
@@ -108,10 +108,10 @@
                                 </div>
                                 <div class="dialog-element center">
                                     <div>
-                                        <asp:CheckBox ID="CallMePersonalDataHandlingCheckBox" runat="server" Checked="true" />
+                                        <asp:CheckBox ID="CallMePersonalDataHandlingCheckBox" runat="server" Checked="true" CssClass="checkBox-button" />
                                         <span>Я принимаю
                                             <asp:LinkButton CausesValidation="False" ID="CallMeTermsLinkButton" runat="server" OnClientClick="ShowTermsForInfoTransfer(); return false;">условия передачи информации</asp:LinkButton></span>
-                                        <asp:CustomValidator ID="TermsCustomValidator" runat="server" Font-Size="0" ErrorMessage="Необходимо согласие на передачу информации"
+                                        <asp:CustomValidator  ID="TermsCustomValidator" runat="server" Font-Size="0" ErrorMessage="Необходимо согласие на передачу информации"
                                             OnServerValidate="CallMeCheckboxRequired_ServerValidate" ValidationGroup="CallMeValidationGroup"></asp:CustomValidator>
                                     </div>
                                 </div>
@@ -163,15 +163,15 @@
                 <asp:PostBackTrigger ControlID="divRecordButtons" /> 
             </Triggers>--%>
             <ContentTemplate>
-                <div class="doctors-container" style="display: flex;justify-content: center;" runat="server">
+                <div class="doctors-container" style="display: flex; justify-content: center;" runat="server">
                     <asp:ListView ID="doctorsListView" runat="server" OnItemDataBound="DoctorsListView_ItemDataBound">
                         <ItemTemplate>
-                            <div class="list-view" style="display: flex;width: 100%;margin-left:20px;justify-content: center;" id="dataList">
+                            <div class="list-view" style="display: flex; width: 100%; margin-left: 20px; justify-content: center;" id="dataList">
                                 <table style="width: 100%; table-layout: fixed;">
                                     <tr>
-                                        <td class="row-for-photo" style="height: 100%; ">
+                                        <td class="row-for-photo" style="height: 100%;">
                                             <div class="photo-container" style="height: 100%; margin-bottom: 20px;">
-                                                <img class="photo" style="height: 100%;padding: 0;border-radius:10px;" src="data:image/png;base64,<%#Eval("StringDoctorPhoto") %>" />
+                                                <img class="photo" style="height: 100%; padding: 0; border-radius: 10px;" src="data:image/png;base64,<%#Eval("StringDoctorPhoto") %>" />
                                             </div>
                                         </td>
                                         <td>
@@ -197,7 +197,7 @@
                                     </tr>
                                     <tr>
                                         <td colspan="2">
-                                            <div class="schedule-time" style="margin-left:15px;">
+                                            <div class="schedule-time" style="margin-left: 15px;">
                                                 <div class="record-buttons" id="divRecordButtons" runat="server">
                                                     <asp:Repeater ID="rptRecordingButton" runat="server" OnItemCommand="RptRecordingButton_ItemCommand">
                                                         <ItemTemplate>
@@ -205,6 +205,7 @@
                                                                 CausesValidation="False"
                                                                 CssClass="time-button"
                                                                 CommandArgument='<%# Container.DataItem %>'
+                                                                style="min-width: 70px;"
                                                                 runat="server"
                                                                 Text='<%# Container.DataItem %>' />
                                                         </ItemTemplate>
@@ -222,87 +223,103 @@
         </asp:UpdatePanel>
         <asp:UpdatePanel ID="UpdatePanelModalDialog" runat="server">
             <ContentTemplate>
-                <div id="modalDialog" class="modal-dialog" tabindex="0">
+                <div id="modalDialog" class="modal-dialog"  style="border-radius:50px; margin-bottom :10%;" tabindex="0">
+     <%--Онлайн-запись в центр--%>
+                    <div class="d" style="display:flex; justify-content:space-around;height:auto;align-items: center; min-height:100px; "> 
+     <h1 class="note-zapis" style="color:white;font-family: 'Manrope'; font-size:35px;">  <asp:Label ID="modalHeaderLabel" runat="server" Text=""></asp:Label></h1>
+                       
+                        <button style="margin-right:25px;background-color:transparent;font-size:30px;border:none;color:white;">✕</button>
+                    </div>
                     <div id="window" class="window">
-                        <div class="dialog-title center">
-                            <p>Подтверждение записи на приём</p>
+                        <div class="dialog-title center"  style="background-color:rgba(255, 255, 255, 1);color:black; ">
+                            <h1 class="dialog-title-note" style="margin-bottom:5px">ПОДТВЕРЖДЕНИЕ ЗАПИСИ НА ПРИЁМ</h1>
                         </div>
-                        <div class="dialog-element left">
-                            <asp:Label ID="branchLabel" runat="server" Text="Филиал: "></asp:Label>
-                            <asp:Label ID="branchInfoLabel" CssClass="checked-value" runat="server" Text=""></asp:Label>
-                        </div>
-                        <div class="dialog-element left">
-                            <asp:Label ID="branchAddressLabel" runat="server" Text="Адрес: "></asp:Label>
-                            <asp:Label ID="branchAddressInfoLabel" CssClass="checked-value" runat="server" Text=""></asp:Label>
-                        </div>
-                        <div class="dialog-element left">
-                            <asp:Label ID="serviceNameLabel" runat="server" Text="Услуга: "></asp:Label>
-                            <asp:Label ID="serviceNameInfoLabel" CssClass="checked-value" runat="server" Text=""></asp:Label>
-                        </div>
-                        <div class="dialog-element left">
-                            <asp:Label ID="priceLabel" runat="server" Text="Цена: "></asp:Label>
-                            <asp:Label ID="priceInfoLabel" CssClass="checked-value" runat="server" Text=""></asp:Label>
-                        </div>
-                        <div class="dialog-element left">
-                            <asp:Label ID="dateLabel" runat="server" Text="Дата приёма: "></asp:Label>
-                            <asp:Label CssClass="checked-value" ID="dateInfoLabel" runat="server" Text=""></asp:Label>
-                        </div>
-                        <div class="dialog-element left">
-                            <asp:Label ID="timeLabel" runat="server" Text="Время приёма: "></asp:Label>
-                            <asp:Label CssClass="checked-value" ID="timeInfoLabel" runat="server" Text=""></asp:Label>
-                        </div>
-                        <div class="dialog-element left">
-                            <asp:Label ID="doctorNameLabel" runat="server" Text="Принимающий доктор: "></asp:Label>
-                            <asp:Label CssClass="checked-value" ID="doctorNameInfoLabel" runat="server" Text=""></asp:Label>
-                        </div>
-                        <%-- Приглашение подтвердить номер телефона --%>
-                        <div id="phoneConfirmOffer" class="dialog-element left phoneConfirmOffer">
-                            <div class="dialog-element center">
-                                <div>
-                                    <asp:CheckBox ID="personalDataHandlingCheckBox" runat="server" Checked="true" />
-                                    <span>Я принимаю
-                                            <asp:LinkButton CausesValidation="False" ID="termsLinkButton" runat="server" OnClientClick="ShowTermsForInfoTransfer(); return false;">условия передачи информации</asp:LinkButton></span>
-                                    <asp:CustomValidator ID="checkboxRequired" runat="server" Font-Size="0" ErrorMessage="Необходимо согласие на передачу информации"
-                                        OnServerValidate="CheckboxRequired_ServerValidate" ValidationGroup="ModalDialogValidationGroup"></asp:CustomValidator>
+                        <div id="window-style" class="window-style" style="background-color:rgba(255, 255, 255, 1); height:auto;">
+                            <div class="dialog-element left" style="margin-left:10%; ">
+                                <asp:Label ID="branchLabel" runat="server" CssClass="serviceName"  Text="Филиал: "></asp:Label>
+                                <asp:Label ID="branchInfoLabel" CssClass="checked-value" runat="server" Text=""></asp:Label>
+                            </div>
+                            <hr class="dialog-hr"/>
+                            <div class="dialog-element left" style="margin-left:10%;">
+                                <asp:Label ID="branchAddressLabel" runat="server" CssClass="serviceName" Text="Адрес: "></asp:Label>
+                                <asp:Label ID="branchAddressInfoLabel" CssClass="checked-value" runat="server" Text=""></asp:Label>
+                            </div>
+                            <hr class="dialog-hr"/>
+                            <div class="dialog-element left" style="margin-left:10%;">
+                                <asp:Label ID="serviceNameLabel" runat="server" CssClass="serviceName"  Text="Услуга: "></asp:Label>
+                                <asp:Label ID="serviceNameInfoLabel" CssClass="checked-value" runat="server" Text=""></asp:Label>
+                            </div>
+                            <hr class="dialog-hr"/>
+                            <div class="dialog-element left" style="margin-left:10%;">
+                                <asp:Label ID="priceLabel" runat="server" CssClass="serviceName" Text="Цена: "></asp:Label>
+                                <asp:Label ID="priceInfoLabel" CssClass="checked-value" runat="server" Text=""></asp:Label>
+                            </div>
+                            <hr class="dialog-hr"/>
+                            <div class="dialog-element left" style="margin-left:10%;">
+                                <asp:Label ID="dateLabel" runat="server"  CssClass="serviceName" Text="Дата приёма: "></asp:Label>
+                                <asp:Label CssClass="checked-value" ID="dateInfoLabel" runat="server" Text=""></asp:Label>
+                            </div>
+                            <hr class="dialog-hr"/>
+                            <div class="dialog-element left" style="margin-left:10%;">
+                                <asp:Label ID="timeLabel" runat="server" CssClass="serviceName" Text="Время приёма: "></asp:Label>
+                                <asp:Label CssClass="checked-value" ID="timeInfoLabel" runat="server" Text=""></asp:Label>
+                            </div>
+                            <hr class="dialog-hr"/>
+                            <div class="dialog-element left" style="margin-left:10%;">
+                                <asp:Label ID="doctorNameLabel" runat="server" CssClass="serviceName" Text="Принимающий доктор: "></asp:Label>
+                                <asp:Label CssClass="checked-value" ID="doctorNameInfoLabel" runat="server" Text=""></asp:Label>
+                            </div>
+                            <hr class="dialog-hr"/>
+                            <%-- Приглашение подтвердить номер телефона --%>
+                            <div id="phoneConfirmOffer" class="dialog-element left phoneConfirmOffer">
+                                <div class="dialog-element center" style="">
+                                    <div style="display:flex;align-content: center;align-items: center;justify-content: flex-start;font-size:15px;">
+                                        <asp:CheckBox ID="personalDataHandlingCheckBox"  CssClass="checkBox-button" runat="server" Checked="true" />
+                                        <span class="checkBox-text" style="">Я принимаю
+                                            <asp:LinkButton CausesValidation="False" CssClass="termsLinkButton" ID="termsLinkButton" runat="server" OnClientClick="ShowTermsForInfoTransfer(); return false;">условия передачи информации</asp:LinkButton></span>
+                                        <asp:CustomValidator ID="checkboxRequired" runat="server" Font-Size="0" ErrorMessage="Необходимо согласие на передачу информации"
+                                            OnServerValidate="CheckboxRequired_ServerValidate" ValidationGroup="ModalDialogValidationGroup"></asp:CustomValidator>
+                                    </div>
                                 </div>
-                            </div>
-                            <div style="word-spacing: 5px;" class="dialog-element center">
-                                <%--<input type="tel" id="phoneTextBox" placeholder="Номер телефона" runat="server" autopostback="false" />--%>
-                                <input id="phoneTextBox" placeholder="Номер телефона" runat="server" autopostback="false" />
-                                <asp:RequiredFieldValidator ID="phoneRfv" runat="server"
-                                    ErrorMessage="Необходимо ввести номер телефона"
-                                    ControlToValidate="phoneTextBox"
-                                    Display="Dynamic"
-                                    Enabled="false"
-                                    SetFocusOnError="True"
-                                    ToolTip="Обязательное поле"
-                                    ValidationGroup="ModalDialogValidationGroup">
+                                <div class="num-phone-but" style="">
+                                    <%--<input type="tel" id="phoneTextBox" placeholder="Номер телефона" runat="server" autopostback="false" />--%>
+                                    <input id="phoneTextBox"  placeholder="Номер телефона" class="js-phoneMask" runat="server" autopostback="false" />
+                                
+                                    <asp:RequiredFieldValidator ID="phoneRfv" runat="server"
+                                        ErrorMessage="Необходимо ввести номер телефона"
+                                        ControlToValidate="phoneTextBox"
+                                        Display="Dynamic"
+                                        Enabled="false"
+                                        SetFocusOnError="True"
+                                        ToolTip="Обязательное поле"
+                                        ValidationGroup="ModalDialogValidationGroup">
                                         <span style="color: red; font-weight: 600;">*</span>
-                                </asp:RequiredFieldValidator>
-                                <asp:RegularExpressionValidator ID="phoneRev" runat="server"
-                                    ErrorMessage="Введите действительный номер телефона"
-                                    ControlToValidate="phoneTextBox"
-                                    ValidationExpression="\+7\(9\d{2}\)-\d{3}-\d{4}"
-                                    ToolTip="Некорректный номер телефона"
-                                    Display="Dynamic"
-                                    Enabled="false"
-                                    ValidationGroup="ModalDialogValidationGroup">
+                                    </asp:RequiredFieldValidator>
+                                    <asp:RegularExpressionValidator ID="phoneRev" runat="server"
+                                        ErrorMessage="Введите действительный номер телефона"
+                                        ControlToValidate="phoneTextBox"
+                                        ValidationExpression="\+7\(9\d{2}\)-\d{3}-\d{4}"
+                                        ToolTip="Некорректный номер телефона"
+                                        Display="Dynamic"
+                                        Enabled="false"
+                                        ValidationGroup="ModalDialogValidationGroup">
                                     <span style="color: red; font-weight: 600;">*</span>
-                                </asp:RegularExpressionValidator>
-                                <asp:Button ID="confirmPhoneButton" CssClass="simple-button" runat="server" Text="Получить код" OnClick="ConfirmPhoneButton_Click" ValidationGroup="ModalDialogValidationGroup" />
+                                    </asp:RegularExpressionValidator>
+                                    <asp:Button ID="confirmPhoneButton" CssClass="simple-button" runat="server" Text="Получить код" OnClick="ConfirmPhoneButton_Click" ValidationGroup="ModalDialogValidationGroup" />
 
-                            </div>
-                            <div class="dialog-element center">
-                                <asp:Label ID="confirmPhoneLabel" CssClass="tooltip" runat="server" Text="На номер телефона будет выслан код через мессенджер WHATSAPP(если есть) или через SMS, который нужно ввести для подтверждения"></asp:Label>
+                                </div>
+                                <div class="dialog-element left">
+                                    <asp:Label ID="confirmPhoneLabel" CssClass="tooltip" runat="server" Text="На номер телефона будет выслан код через мессенджер WHATSAPP(если есть) или через SMS, который нужно ввести для подтверждения"></asp:Label>
+                                </div>
                             </div>
                         </div>
 
                         <%-- Форма подтверждения номера телефона --%>
-                        <div id="phoneConfirmForm" class="phoneConfirmForm dialog-element center">
+                        <div id="phoneConfirmForm" class="phoneConfirmForm dialog-element center"  <%--style="display:flex;margin-left: 10%;margin-right: 10%;padding-left:15px; font-size:20px;" --%>>
                             <asp:Label ID="codeWasRequestedLabel" runat="server" Text="0" Visible="false"></asp:Label>
                             <asp:Label ID="tryAmountLabel" runat="server" Text="0" Visible="false"></asp:Label>
                             <div class="dialog-element center">
-                                <asp:TextBox ID="codeTextBox" runat="server" placeHolder="Введите код" AutoCompleteType="Disabled"></asp:TextBox>
+                                <asp:TextBox ID="codeTextBox" runat="server" placeHolder="Введите код" AutoCompleteType="Disabled" style=" height:70px;width:50%;"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="codeRfv" runat="server" ErrorMessage="Необходимо ввести код подтверждения" ControlToValidate="codeTextBox" ToolTip="Обязательное поле" Enabled="false" Display="Static" ValidationGroup="ModalDialogValidationGroup"><span style="color: red; font-weight: 600;">*</span></asp:RequiredFieldValidator>
                                 <asp:Button CssClass="simple-button" ID="codeConfirmButton" runat="server" Text="Записаться" OnClick="CodeConfirmButton_Click" ValidationGroup="ModalDialogValidationGroup" />
                             </div>
@@ -316,14 +333,15 @@
                             <div class="dialog-element">
                                 <asp:Button CausesValidation="False" ID="sendCodeAgainButton" CssClass="simple-button small-button hide" runat="server" Text="Получить новый код" OnClick="SendCodeAgainButton_Click" />
                             </div>
-                        </div>
+                        </div> 
+                     
+                        
                         <div class="dialog-element center">
                             <asp:ValidationSummary ID="fieldsValidationSummary" runat="server" ValidationGroup="ModalDialogValidationGroup" />
                         </div>
-
-                        <div class="dialog-element center">
-                            <asp:Button CssClass="simple-button dialog-button" ID="cancelButton" runat="server" Text="Отмена" OnClientClick="javascript:CloseModalDialog(); return false;" />
-                        </div>
+                    </div>
+                    <div class="d" style="background-color:#258cd1;border-bottom-left-radius:50px;border-bottom-right-radius:50px; display: flex; justify-content: space-around; height: 25px; line-height: 25px; align-items: center;">
+                        <span class="noteSize" style="border-bottom-left-radius: 15px 15px; border-bottom-right-radius: 15px 15px; color: white; font-family: 'Manrope'; background-color: #258cd1;">Сервис онлайн-записи МИС "Медицинский Помощник"</span>
                     </div>
                 </div>
                 <asp:Label ID="appInfoLabel" runat="server" Visible="false"></asp:Label>

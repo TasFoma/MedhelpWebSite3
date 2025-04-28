@@ -1,7 +1,9 @@
 ﻿* {
     font-family: cambria,Times New Roman,cambria, Georgia, Times, serif;
 }
-
+#header br {
+    display: none;
+}
 html,
 body,
 #form1 {
@@ -47,6 +49,7 @@ h3,
   /*  font-weight: bold;*/
     text-decoration: underline;
 }
+
 
 body,
 #form1 {
@@ -485,15 +488,16 @@ select {
 }
 
 .simple-button {
+    height: 70px;
     width: auto;
     color: rgba(0, 0, 0, 1);
     /* background: #258cd1;*/
     border-radius: 10px;
     border: 2px solid transparent;
     text-transform: uppercase;
-   /*font-weight: 600;*/ 
+    /*font-weight: 600;*/
     letter-spacing: 0.07em;
-    padding: 10px;
+   /* padding: 10px;*/
 }
 
 .information-button {
@@ -614,27 +618,48 @@ footer {
 } 
 
     @media only screen and (max-width: 550px) {
+        #header br {
+            display: initial;
+        }
+        .schedule {
+            overflow-x: scroll;
+            width: 100%;
+        }
         header,
         footer {
-            width: 510px;
+            width: auto;
         }
 
         body,
         #form1 {
             overflow: visible;
         }
+        .price-list-view-container {
+            overflow-y: scroll;
+            height: 400px;
+        }
     }
 
     @media only screen and (min-width: 240px) and (max-width: 480px) {
+        #header br {
+            display: initial;
+        }
+        .schedule {
+            overflow-x: scroll;
+            width: 100%;
+        }
         .container {
             max-width: 480px;
             min-width: 320px;
-            width: 100%;
+            width: 100%; 
         }
-
+       .price-list-view-container {
+            overflow-y: scroll;
+            height: 200px;
+        }
         header,
         footer {
-            width: Calc(100% - 40px);
+            width: auto;
         }
 
         .search-button {
@@ -676,6 +701,13 @@ footer {
     }
 
     @media only screen and (min-width: 240px) and (max-width: 359px) {
+        #header br {
+            display: initial;
+        }
+        .schedule {
+            overflow-x: scroll;
+            width: 100%;
+        }
         .row-for-photo,
         .photo-container,
         .photo {
@@ -686,9 +718,24 @@ footer {
         .photo-container {
             padding: 20px 5px 0 5px;
         }
+        .price-list-view-container {
+            overflow-y: scroll;
+            height: 200px;
+        }
     }
 
     @media only screen and (min-width: 240px) and (max-width: 319px) {
+        #header br {
+            display: initial;
+        }
+        .schedule {
+            overflow-x: scroll;
+            width: 100%;
+        }
+        .price-list-view-container {
+            overflow-y: scroll;
+            height: 200px;
+        }
         .container {
             max-width: 319px;
             min-width: 240px;
@@ -747,8 +794,15 @@ footer {
     }
 
     @media only screen and (min-width: 320px) and (max-width: 340px) {
+        #header br {
+            display: initial;
+        }
         header {
             font-size: 18px;
+        }
+        .schedule{
+            overflow-x:scroll;
+            width:100%;
         }
     }
 
@@ -794,7 +848,7 @@ footer {
         footer {
             position: absolute;
             left: 0;
-            width: Calc(100% - 40px);
+            width: auto;
         }
 
         header {

@@ -198,6 +198,7 @@ public partial class AppointmentDatePicking : Page
         var mondayDate = DateTime.MinValue;
         if (!Page.IsPostBack)
         {
+            modalHeaderLabel.Text = "Онлайн-запись в медицинский центр \"" + Session[SessionParamName.MedTitle] as string + "\"";
             var headerLabel = Master.FindControl("headerLabel") as Label;
             if (!headerLabel.Text.EndsWith($"\"{Session[SessionParamName.MedTitle] as string}\""))
                 headerLabel.Text += $"\"{Session[SessionParamName.MedTitle] as string}\"";

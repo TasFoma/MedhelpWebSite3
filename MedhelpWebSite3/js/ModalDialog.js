@@ -1,6 +1,6 @@
-﻿document.addEventListener('contextmenu', function (e) {
+﻿/*document.addEventListener('contextmenu', function (e) {
     e.preventDefault();
-});
+});*/
 var itsOk = false;
 var width = 0.0;
 var height = 0.0;
