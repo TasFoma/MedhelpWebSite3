@@ -23,7 +23,9 @@
     <asp:Label ID="commonMaxAppLabel" runat="server" Text="0" Visible="false"></asp:Label>
     <asp:Label ID="serviceMaxAppLabel" runat="server" Text="0" Visible="false"></asp:Label>
     <div class="page-title" style="background-color: white; text-decoration: none; height: 60px; display: flex; align-items: center; justify-content: center;">
-        <h1>ОФОРМЛЕНИЕ  <br />ЗАПИСИ НА ПРИЁМ</h1>
+        <h1>ОФОРМЛЕНИЕ 
+            <br />
+            ЗАПИСИ НА ПРИЁМ</h1>
     </div>
     <div class="checked-service-container" style="background-color: white;">
         <asp:Label CssClass="post-title" ID="checkedServiceLabel" runat="server" Text="Выбранная услуга:"></asp:Label>
@@ -38,7 +40,7 @@
                 <div class="branch-container">
                     <asp:Label CssClass="post-title" ID="availabledBranchesLabel" runat="server" Text="Доступные филиалы:"></asp:Label>
                     <asp:Repeater ID="rptBranchButton" runat="server" OnItemCommand="RptBranchButton_ItemCommand">
-                        <ItemTemplate> 
+                        <ItemTemplate>
                             <asp:Button CausesValidation="False" CssClass="branch-button" ID="branchButton" CommandArgument='<%# DataBinder.Eval(Container.DataItem, "BranchID") %>' runat="server" Text='<%# DataBinder.Eval(Container.DataItem, "BranchName") %>' />
                         </ItemTemplate>
                     </asp:Repeater>
@@ -111,7 +113,7 @@
                                         <asp:CheckBox ID="CallMePersonalDataHandlingCheckBox" runat="server" Checked="true" CssClass="checkBox-button" />
                                         <span>Я принимаю
                                             <asp:LinkButton CausesValidation="False" ID="CallMeTermsLinkButton" runat="server" OnClientClick="ShowTermsForInfoTransfer(); return false;">условия передачи информации</asp:LinkButton></span>
-                                        <asp:CustomValidator  ID="TermsCustomValidator" runat="server" Font-Size="0" ErrorMessage="Необходимо согласие на передачу информации"
+                                        <asp:CustomValidator ID="TermsCustomValidator" runat="server" Font-Size="0" ErrorMessage="Необходимо согласие на передачу информации"
                                             OnServerValidate="CallMeCheckboxRequired_ServerValidate" ValidationGroup="CallMeValidationGroup"></asp:CustomValidator>
                                     </div>
                                 </div>
@@ -205,7 +207,7 @@
                                                                 CausesValidation="False"
                                                                 CssClass="time-button"
                                                                 CommandArgument='<%# Container.DataItem %>'
-                                                                style="min-width: 70px;"
+                                                                Style="min-width: 70px;"
                                                                 runat="server"
                                                                 Text='<%# Container.DataItem %>' />
                                                         </ItemTemplate>
@@ -223,68 +225,71 @@
         </asp:UpdatePanel>
         <asp:UpdatePanel ID="UpdatePanelModalDialog" runat="server">
             <ContentTemplate>
-                <div id="modalDialog" class="modal-dialog"  style="border-radius:50px; margin-bottom :10%;" tabindex="0">
-     <%--Онлайн-запись в центр--%>
-                    <div class="d" style="display:flex; justify-content:space-around;height:auto;align-items: center; min-height:100px; "> 
-     <h1 class="note-zapis" style="color:white;font-family: 'Manrope'; font-size:35px;">  <asp:Label ID="modalHeaderLabel" runat="server" Text=""></asp:Label></h1>
-                       
-                        <button style="margin-right:25px;background-color:transparent;font-size:30px;border:none;color:white;">✕</button>
+                <div id="modalDialog" class="modal-dialog" style="border-radius: 50px; margin-bottom: 10%;" tabindex="0">
+                    <%--Онлайн-запись в центр--%>
+                    <div class="d" style="display: flex; justify-content: space-around; height: auto; align-items: center; min-height: 100px;">
+                        <h1 class="note-zapis" style="color: white; font-family: 'Manrope'; font-size: 35px;">
+                            <asp:Label ID="modalHeaderLabel" runat="server" Text=""></asp:Label></h1>
+
+                        <button style="margin-right: 25px; background-color: transparent; font-size: 30px; border: none; color: white;">✕</button>
                     </div>
                     <div id="window" class="window">
-                        <div class="dialog-title center"  style="background-color:rgba(255, 255, 255, 1);color:black; ">
-                            <h1 class="dialog-title-note" style="margin-bottom:5px">ПОДТВЕРЖДЕНИЕ ЗАПИСИ НА ПРИЁМ</h1>
+                        <div class="dialog-title center" style="background-color: rgba(255, 255, 255, 1); color: black;">
+                            <h1 class="dialog-title-note" style="margin-bottom: 5px">ПОДТВЕРЖДЕНИЕ ЗАПИСИ НА ПРИЁМ</h1>
                         </div>
-                        <div id="window-style" class="window-style" style="background-color:rgba(255, 255, 255, 1); height:auto;">
-                            <div class="dialog-element left" style="margin-left:10%; ">
-                                <asp:Label ID="branchLabel" runat="server" CssClass="serviceName"  Text="Филиал: "></asp:Label>
+                        <div id="window-style" class="window-style" style="background-color: rgba(255, 255, 255, 1); height: auto;">
+                            <div class="dialog-element left" style="margin-left: 10%;">
+                                <asp:Label ID="branchLabel" runat="server" CssClass="serviceName" Text="Филиал: "></asp:Label>
                                 <asp:Label ID="branchInfoLabel" CssClass="checked-value" runat="server" Text=""></asp:Label>
                             </div>
-                            <hr class="dialog-hr"/>
-                            <div class="dialog-element left" style="margin-left:10%;">
+                            <hr class="dialog-hr" />
+                            <div class="dialog-element left" style="margin-left: 10%;">
                                 <asp:Label ID="branchAddressLabel" runat="server" CssClass="serviceName" Text="Адрес: "></asp:Label>
                                 <asp:Label ID="branchAddressInfoLabel" CssClass="checked-value" runat="server" Text=""></asp:Label>
                             </div>
-                            <hr class="dialog-hr"/>
-                            <div class="dialog-element left" style="margin-left:10%;">
-                                <asp:Label ID="serviceNameLabel" runat="server" CssClass="serviceName"  Text="Услуга: "></asp:Label>
+                            <hr class="dialog-hr" />
+                            <div class="dialog-element left" style="margin-left: 10%;">
+                                <asp:Label ID="serviceNameLabel" runat="server" CssClass="serviceName" Text="Услуга: "></asp:Label>
                                 <asp:Label ID="serviceNameInfoLabel" CssClass="checked-value" runat="server" Text=""></asp:Label>
                             </div>
-                            <hr class="dialog-hr"/>
-                            <div class="dialog-element left" style="margin-left:10%;">
+                            <hr class="dialog-hr" />
+                            <div class="dialog-element left" style="margin-left: 10%;">
                                 <asp:Label ID="priceLabel" runat="server" CssClass="serviceName" Text="Цена: "></asp:Label>
                                 <asp:Label ID="priceInfoLabel" CssClass="checked-value" runat="server" Text=""></asp:Label>
                             </div>
-                            <hr class="dialog-hr"/>
-                            <div class="dialog-element left" style="margin-left:10%;">
-                                <asp:Label ID="dateLabel" runat="server"  CssClass="serviceName" Text="Дата приёма: "></asp:Label>
+                            <hr class="dialog-hr" />
+                            <div class="dialog-element left" style="margin-left: 10%;">
+                                <asp:Label ID="dateLabel" runat="server" CssClass="serviceName" Text="Дата приёма: "></asp:Label>
                                 <asp:Label CssClass="checked-value" ID="dateInfoLabel" runat="server" Text=""></asp:Label>
                             </div>
-                            <hr class="dialog-hr"/>
-                            <div class="dialog-element left" style="margin-left:10%;">
+                            <hr class="dialog-hr" />
+                            <div class="dialog-element left" style="margin-left: 10%;">
                                 <asp:Label ID="timeLabel" runat="server" CssClass="serviceName" Text="Время приёма: "></asp:Label>
                                 <asp:Label CssClass="checked-value" ID="timeInfoLabel" runat="server" Text=""></asp:Label>
                             </div>
-                            <hr class="dialog-hr"/>
-                            <div class="dialog-element left" style="margin-left:10%;">
+                            <hr class="dialog-hr" />
+                            <div class="dialog-element left" style="margin-left: 10%;">
                                 <asp:Label ID="doctorNameLabel" runat="server" CssClass="serviceName" Text="Принимающий доктор: "></asp:Label>
                                 <asp:Label CssClass="checked-value" ID="doctorNameInfoLabel" runat="server" Text=""></asp:Label>
                             </div>
-                            <hr class="dialog-hr"/>
+                            <hr class="dialog-hr" />
                             <%-- Приглашение подтвердить номер телефона --%>
                             <div id="phoneConfirmOffer" class="dialog-element left phoneConfirmOffer">
-                                <div class="dialog-element center" style="">
-                                    <div style="display:flex;align-content: center;align-items: center;justify-content: flex-start;font-size:15px;">
-                                        <asp:CheckBox ID="personalDataHandlingCheckBox"  CssClass="checkBox-button" runat="server" Checked="true" />
-                                        <span class="checkBox-text" style="">Я принимаю
-                                            <asp:LinkButton CausesValidation="False" CssClass="termsLinkButton" ID="termsLinkButton" runat="server" OnClientClick="ShowTermsForInfoTransfer(); return false;">условия передачи информации</asp:LinkButton></span>
+                                <div class="dialog-element center left-offset">
+                                    <div class="checkbox-row">
+                                        <asp:CheckBox ID="personalDataHandlingCheckBox" CssClass="checkBox-button" runat="server" Checked="true" />
+                                        <span class="checkBox-text">Я принимаю 
+            <asp:LinkButton CausesValidation="False" CssClass="termsLinkButton" ID="termsLinkButton" runat="server" OnClientClick="ShowTermsForInfoTransfer(); return false;">условия передачи информации</asp:LinkButton>
+                                        </span>
                                         <asp:CustomValidator ID="checkboxRequired" runat="server" Font-Size="0" ErrorMessage="Необходимо согласие на передачу информации"
                                             OnServerValidate="CheckboxRequired_ServerValidate" ValidationGroup="ModalDialogValidationGroup"></asp:CustomValidator>
                                     </div>
                                 </div>
+
                                 <div class="num-phone-but" style="">
                                     <%--<input type="tel" id="phoneTextBox" placeholder="Номер телефона" runat="server" autopostback="false" />--%>
-                                    <input id="phoneTextBox"  placeholder="Номер телефона" class="js-phoneMask" runat="server" autopostback="false" />
-                                
+                                    <input id="phoneTextBox" placeholder="Номер телефона" class="js-phoneMask" runat="server" autopostback="false" />
+
                                     <asp:RequiredFieldValidator ID="phoneRfv" runat="server"
                                         ErrorMessage="Необходимо ввести номер телефона"
                                         ControlToValidate="phoneTextBox"
@@ -315,11 +320,11 @@
                         </div>
 
                         <%-- Форма подтверждения номера телефона --%>
-                        <div id="phoneConfirmForm" class="phoneConfirmForm dialog-element center"  <%--style="display:flex;margin-left: 10%;margin-right: 10%;padding-left:15px; font-size:20px;" --%>>
+                        <div id="phoneConfirmForm" class="phoneConfirmForm dialog-element center">
                             <asp:Label ID="codeWasRequestedLabel" runat="server" Text="0" Visible="false"></asp:Label>
                             <asp:Label ID="tryAmountLabel" runat="server" Text="0" Visible="false"></asp:Label>
                             <div class="dialog-element center">
-                                <asp:TextBox ID="codeTextBox" runat="server" placeHolder="Введите код" AutoCompleteType="Disabled" style=" height:70px;width:50%;"></asp:TextBox>
+                                <asp:TextBox CssClass="codeTextBox" ID="codeTextBox" runat="server" placeHolder="Введите код" AutoCompleteType="Disabled"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="codeRfv" runat="server" ErrorMessage="Необходимо ввести код подтверждения" ControlToValidate="codeTextBox" ToolTip="Обязательное поле" Enabled="false" Display="Static" ValidationGroup="ModalDialogValidationGroup"><span style="color: red; font-weight: 600;">*</span></asp:RequiredFieldValidator>
                                 <asp:Button CssClass="simple-button" ID="codeConfirmButton" runat="server" Text="Записаться" OnClick="CodeConfirmButton_Click" ValidationGroup="ModalDialogValidationGroup" />
                             </div>
@@ -333,14 +338,14 @@
                             <div class="dialog-element">
                                 <asp:Button CausesValidation="False" ID="sendCodeAgainButton" CssClass="simple-button small-button hide" runat="server" Text="Получить новый код" OnClick="SendCodeAgainButton_Click" />
                             </div>
-                        </div> 
-                     
-                        
+                        </div>
+
+
                         <div class="dialog-element center">
                             <asp:ValidationSummary ID="fieldsValidationSummary" runat="server" ValidationGroup="ModalDialogValidationGroup" />
                         </div>
                     </div>
-                    <div class="d" style="background-color:#258cd1;border-bottom-left-radius:50px;border-bottom-right-radius:50px; display: flex; justify-content: space-around; height: 25px; line-height: 25px; align-items: center;">
+                    <div class="d" style="background-color: #258cd1; border-bottom-left-radius: 50px; border-bottom-right-radius: 50px; display: flex; justify-content: space-around; height: 25px; line-height: 25px; align-items: center;">
                         <span class="noteSize" style="border-bottom-left-radius: 15px 15px; border-bottom-right-radius: 15px 15px; color: white; font-family: 'Manrope'; background-color: #258cd1;">Сервис онлайн-записи МИС "Медицинский Помощник"</span>
                     </div>
                 </div>
@@ -395,7 +400,7 @@
         <ProgressTemplate>
             <div style="position: fixed; top: 0; right: 0; bottom: 0; left: 0; background: grey; z-index: 3; display: block; opacity: 0.8; text-align: center">
             </div>
-            <div style="color: #fff; background: transparent; text-align: center; position: fixed; width: 240px; height: 240px; left: Calc(50% - 120px); top: Calc(50% - 120px); z-index: 4;">
+            <div style="color: #fff; background: transparent; text-align: center; position: fixed; width: 240px; height: 240px; left: Calc(50% - 160px); top: Calc(50% - 120px); z-index: 4;">
                 <div class="sk-cube-grid">
                     <div class="sk-cube sk-cube1"></div>
                     <div class="sk-cube sk-cube2"></div>

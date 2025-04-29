@@ -25,11 +25,6 @@
     font-size: 20px;
     background-color: rgba(246, 246, 246, 1);
 }
-.checkBox-text {
-    margin-left: 40px;
-    margin-top: 20px;
-    font-size: 20px;
-}
 /*#MainContentPlaceHolder_confirmPhoneLabel {
     padding-left: 20%;
     padding-right: 20%;
@@ -59,18 +54,23 @@
 #MainContentPlaceHolder_confirmPhoneLabel {
     display: flex; 
 }
+#MainContentPlaceHolder_codeTextBox {
+    height: 20px;
+    width: 50%;
+    border-radius: 15px;
+}
 .serviceName {
     font-weight: bold;
     font-size:25px;
 }
- .dialog-element.center {
+ /*.dialog-element.center {
     display: flex;
     align-content: center;
     align-items: center;
     justify-content: flex-start;
     margin-left: 10%;
     height: 80px;
-}
+}*/
 .modal-dialog-background {
     position: fixed;
     top: 0;
@@ -95,21 +95,35 @@
     height: 70px;
     width: 50%;
 }
-.checkBox-button {
-    height: 25px;
-    width: 25px;
-    min-width: 25px;
-    min-height: 25px;
+.checkbox-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 80%;
 }
+.checkBox-button {
+    height: 65px;
+    width: 65px;
+    /* min-width: 25px;
+    min-height: 25px;
+    margin-top: 10px;*/
+    display: flex;
+    align-items: center;
+}
+.checkBox-text {
+    font-size: 25px;
+}
+.dialog-element.center.left-offset {
+    justify-content: flex-start;
+    margin-left: 10%;
+}
+
 .modal-dialog {
     position: fixed;
-    /* left: Calc(50% - 150px);
-    top: Calc(50% - 125px);*/
     background: #258cd1; /* #e6e6e6*/
     z-index: 2;
     display: none;
-    /*  width: 542.333px;
-    max-width: 600px;*/
     width: 60%;
     height: 90%;
 }
@@ -121,7 +135,7 @@ input[type="checkbox"].checkBox-button {
 }
 .window {
     background-color: white;
-    height:85%; 
+    height:80%; 
     color: #000;
     padding-bottom: 10px;
 }
@@ -230,8 +244,8 @@ h3:hover {
 }
 
 .error-container {
-    max-width: 600px;
-    display: none;
+    max-width: 100%;
+    display: none; 
 }
 
 .show {
@@ -272,120 +286,26 @@ h3:hover {
     .close-button:hover {
         cursor: pointer;
     }
-
-@media only screen and (min-width: 240px) and (max-width: 319px) {
-    .simple-button {
-        height: 20px;
-        padding: 10px 4px;
-    }
-    .num-phone-but {
-        height: 20px;
-    }
-    .js-phoneMask {
-        height: 20px;
-        font-size: 10px;
-    }
-    .modal-dialog {
-    height: 90%;
+     
+ 
+/*стили для компьютеров*/
+@media (min-width: 768px) {
+    
 }
-    .dialog-element.center { 
-        height: 0px;
-    }
+
+/* стили для телефонов */
+@media (max-width: 768px) {    
     #MainContentPlaceHolder_confirmPhoneLabel {
         display: flex;
         font-size: 10px !important;
     }
-    .modal-dialog {
-        /*height: 60%;*/
-        min-width: 240px;
-        max-width: 240px;
-    }
-
-    .dialog-element {
-       /* padding: 5px 5px 0 5px;*/
-        width: Calc(100% - 10px);
-    }
-
-    .simple-button,
-    .dialog-button {
-        font-size: 10px;
-        padding: 10px 4px;
-    }
-
-    .information-button {
-        font-size: 16px;
-        padding: 0;
-    }
-
     #MainContentPlaceHolder_codeTextBox {
-        width: 90px;
+        height: 20px;
+        width: 50%;
+        border-radius: 15px;
     }
-
-    #MainContentPlaceHolder_phoneTextBox {
-        width: 106px;
-    }
-
     #MainContentPlaceHolder_confirmPhoneButton {
         font-size: 8px;
-    }
-
-    .terms-info {
-        font-size: 12px;
-        margin: 10px 0;
-    }
-
-    .list-view {
-        padding: 0 5px;
-    }
-}
-
-@media only screen and (min-width: 320px) and (max-width: 480px) {
-    .num-phone-but {
-        height: 20px;
-    }
-    .simple-button {
-        height: 20px;
-    }
-    .js-phoneMask {
-        height: 20px;
-        font-size:10px;
-    }
-    .dialog-element.center {
-        height: 0px;
-    }
-    .modal-dialog {
-        height: 90%;
-    }
-    #MainContentPlaceHolder_confirmPhoneLabel {
-        display: flex;
-        font-size: 10px !important;
-    }
-    .d .noteSize{
-        font-size:10px !important;
-    }
-    .d .note-zapis {
-        font-size: 20px !important;
-    }
-    .serviceName {
-        font-size: 15px !important;
-    }
-   .dialog-title .dialog-title-note {
-        font-size: 15px !important;
-    }
-    .checked-value {
-        font-size: 15px !important;
-    }
-    .checkBox-text {
-        display: flex;
-        font-size: 10px !important;
-        margin-left: 20px;
-        margin-top: 0px;
-    }
-    .modal-dialog {
-        min-width: 320px;
-        max-width: 320px;
-        /* height: 60%;
-        height:50%;*/
     }
     #MainContentPlaceHolder_personalDataHandlingCheckBox {
         width: 20px;
@@ -395,77 +315,116 @@ h3:hover {
         cursor: pointer;
         border-radius: 15px;
     }
+    .window {
+        height: 70%;
+    }
+    .checkBox-button {
+        height: 5px;
+        width: 5px;
+        display: flex;
+        align-items: center;
+    }
+    .checkBox-text {
+        display: flex;
+        font-size: 10px !important;
+        margin-left: 20px;
+        margin-top: 0px;
+    }
+    .modal-dialog {
+       /* height: 90%;*/
+        min-width: 320px;
+        max-width: 320px;
+    }
+    .dialog-element {
+        /* padding: 5px 5px 0 5px;*/
+        width: Calc(100% - 10px);
+    }
     .simple-button,
     .dialog-button {
         font-size: 10px;
         padding: 10px 4px;
     }
-
     .information-button {
         font-size: 16px;
         padding: 0;
     }
-
+    .terms-info {
+        font-size: 12px;
+        margin: 10px 0;
+    }
+    .list-view {
+        padding: 0 5px;
+    }
+    .simple-button {
+        line-height: 1px;   
+        height: 20px;
+    }
+    .error-container {
+        max-width: 600px;
+        display: none;
+    }
+    .codeTextBox {
+        height: 20px;
+        border-radius: 15px;
+    }
+    .num-phone-but {
+        height: 20px;
+    }
+    .js-phoneMask {
+        height: 20px;
+        font-size: 10px;
+    }
+    .d .noteSize {
+        font-size: 10px !important;
+    }
+    .d .note-zapis {
+        font-size: 20px !important;
+        margin-right: 20px;
+    }
+    .serviceName {
+        font-size: 15px !important;
+    }
+    .dialog-title .dialog-title-note {
+        font-size: 15px !important;
+    }
+    .checked-value {
+        font-size: 15px !important;
+    }
     .phoneConfirmForm {
         word-spacing: normal;
     }
-
-    #MainContentPlaceHolder_codeTextBox {
-        width: 90px;
+   /* .dialog-element.left {
+        max-width: 90%;
+        overflow: hidden;
     }
-
-    #MainContentPlaceHolder_phoneTextBox {
-        width: 116px;
-    }
-}
-
-@media only screen and (max-height: 514px) and (max-width: 360px) {
-    #MainContentPlaceHolder_confirmPhoneLabel {
-        display: flex;
-        font-size: 10px !important;
+    .serviceName,
+    .checked-value {
+        display: inline;
+        white-space: normal;
+        word-break: break-word;
+        overflow-wrap: break-word;
+        max-width: 100%;
+    }*/
+    .error-container {
+        max-width: 600px;
+        display: none;
     }
     .terms-info {
         margin: 2px 0;
-        font-weight: 300;
-    }
-}
-
-@media only screen and (max-height: 394px) {
-  .dialog-title {
-        width: Calc(100% - 10px);
-        padding: 5px;
-    }
-
-    .dialog-title {
-        font-size: 16px;
-    }
-
-    .dialog-element {
-       /* padding-bottom: 0;*/
-        font-size: 12px;
-    }
-}
-
-@media only screen and (max-height: 440px) and (max-width: 320px) {
-    .terms-info {
+        font-weight: 300; 
         font-size: 10px;
     }
-}
-
-@media only screen and (max-height: 315px) {
-    .dialog-element {
-      /*  padding: 5px 10px 0 10px;*/
+    .dialog-title {
+        width: Calc(100% - 10px);
+        padding: 5px;
+        font-size: 16px;
     }
-
+    .dialog-element {
+        /* padding-bottom: 0;*/
+        font-size: 12px;
+    }
     .dialog-title p {
         padding: 0;
     }
 }
-
-@media only screen and (min-width: 481px) and (max-width: 542.333px) {
-    .modal-dialog {
-     /*   height: 60%;*/
-        min-width: 480px;
-        max-width: 480px;
-    }
-}
+ 

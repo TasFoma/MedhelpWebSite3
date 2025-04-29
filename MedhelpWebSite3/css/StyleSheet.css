@@ -583,7 +583,7 @@ footer {
 }
 
 .errorMessage {
-    font-size: 14px;
+    font-size: 20px;
     color: red;
 }
 
@@ -618,6 +618,11 @@ footer {
 } 
 
     @media only screen and (max-width: 550px) {
+        .errorMessage {
+            font-size: 10px;
+            color: red;
+            margin-top: 50px;
+        }
         #header br {
             display: initial;
         }
