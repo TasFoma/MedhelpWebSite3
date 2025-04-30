@@ -880,10 +880,18 @@ public partial class AppointmentDatePicking : Page
                     InsertLogData(GetPhoneNumber(phoneTextBox.Value), $"{LogMessage.FaildConfirmationCodeRequest}. {errorMessage}", LogTypes.Warning);
                 }
             }
-
+           
             script = errorMessage == null ? string.Format("ShowModalDialogSecondStep('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', {7}, '{8}');", checkedBranch.BranchName, checkedBranch.BranchAddress, servicePriceLbl.Text, serviceNameLbl.Text, checkedDayLabel.Text, app.AppTime, app.DoctorFullName, 0, null)
                 : string.Format("ShowModalDialogFirstStep('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', {7}, '{8}');", checkedBranch.BranchName, checkedBranch.BranchAddress, itog_cena, serviceNameLbl.Text, checkedDayLabel.Text, app.AppTime, app.DoctorFullName, 1, errorMessage);
             ScriptManager.RegisterStartupScript(sender as Control, GetType(), errorMessage == null ? "ShowModalDialogSecond" : "ShowModalDialogFirst", script, true);
+            /* это затычка для теста
+              script = string.Format("ShowModalDialogSecondStep('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', {7}, '{8}');",
+    checkedBranch.BranchName, checkedBranch.BranchAddress, servicePriceLbl.Text, serviceNameLbl.Text,
+    checkedDayLabel.Text, app.AppTime, app.DoctorFullName, 0, null);
+
+ScriptManager.RegisterStartupScript(sender as Control, GetType(), "ShowModalDialogSecond", script, true);*/
+
+
             if (itsOk)
             {
                 phoneRfv.Enabled = phoneRev.Enabled = false;

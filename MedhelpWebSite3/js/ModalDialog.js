@@ -55,6 +55,9 @@ function InitModalDialogElements()
     errorContainer = $('#errorContainer');
     errorLabel = $('#MainContentPlaceHolder_errorLabel');
 }
+/*function CloseTermsInfoDialog() {
+    document.getElementById('TermsModalDialog').style.display = 'none';
+}*/
 
 //Нужно для создания нового пациента, если будет доступен выбор привязанных к номеру пациентов из списка, и создание нового, если его в списке нет
 //function CheckBoxWasChecked() {
@@ -332,7 +335,7 @@ function ShowConfirmPhone() {
     phoneConfirmOffer.css('display', 'none');
     phoneConfirmForm.css('display', 'block');
 }
-
+/*
 function ShowTermsForInfoTransfer() {
     console.log('ShowTermsForInfoTransfer()');
     var termsDialog = $('#TermsModalDialog');
@@ -349,9 +352,29 @@ function ShowTermsForInfoTransfer() {
     modalDialogBackground.unbind();
     termsDialog.addClass('show');
 }
-
+*/
+/*
 function CloseTermsInfoDialog() {
     modalDialogBackground.bind('click', HideConfirmAppointmentModalDialog);
     var termsDialog = $('#TermsModalDialog');
     termsDialog.removeClass('show');
+}/*function CloseTermsInfoDialog() {
+    var modal = document.getElementById('TermsModalDialog');
+    if (modal) {
+        modal.style.display = 'none';
+        console.log('Модальное окно закрыто');
+    }
+}
+*/  function ShowTermsForInfoTransfer() {
+    var modal = document.getElementById('TermsModalDialog');
+    if (modal) {
+        modal.style.display = 'flex';
+    }
+}
+// Функция скрытия модального окна
+function CloseTermsInfoDialog() {
+    var modal = document.getElementById('TermsModalDialog');
+    if (modal) {
+        modal.style.display = 'none';
+    }
 }

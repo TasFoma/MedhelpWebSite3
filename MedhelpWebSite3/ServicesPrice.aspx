@@ -4,7 +4,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <script src="js/ListView.js"></script>
     <script> 
-        function handleClick(element) {
+      /*  function handleClick(element) {
             var hiddenRecord = $(element).find('.hiddenRecord');
             var signUpLinkButton = $(element).find('.my-link-sign-up');
 
@@ -13,6 +13,36 @@
             } else {
                 if (signUpLinkButton.length > 0) {
                     signUpLinkButton[0].click();
+                } else {
+                    console.log('Кнопка "Записаться" не найдена');
+                }
+            }
+        }*/function ShowLoading() {
+            $('#divBackground').show();
+            $('#divLoader').show();
+        }
+
+        function HideLoading() {
+            $('#divBackground').hide();
+            $('#divLoader').hide();
+        }
+        function handleClick(element) {
+            var hiddenRecord = $(element).find('.hiddenRecord');
+            var signUpLinkButton = $(element).find('.my-link-sign-up');
+            if (hiddenRecord.find('.comment').text().trim() !== '') {
+                console.log('Коммент hiddenRecord.fin');
+                hiddenRecord.toggleClass('hidden-record');
+                $('.price-list-view.active-service').removeClass('active-service');
+                if (!hiddenRecord.hasClass('hidden-record')) {
+                    console.log(' if (!hiddenRecord.hasClass(  ');
+                    $(element).addClass('active-service');
+                }
+            } else {
+                console.log('else Коммент ');
+                if (signUpLinkButton.length > 0) {
+                    signUpLinkButton[0].click();
+                    ShowLoading();
+                    console.log('ShowLoading ');
                 } else {
                     console.log('Кнопка "Записаться" не найдена');
                 }
@@ -81,6 +111,7 @@
                                                 </div>
                                                 <asp:LinkButton ID="signUpLinkButton" runat="server" CssClass="my-link-sign-up"
                                                     OnClick="AdditSignUpLinkButton_Click"
+                                                     OnClientClick="ShowLoading();event.stopPropagation(); "
                                                     CommandArgument='<%# Eval("Id_Service") %>'>Записаться</asp:LinkButton>
                                             </div>
                                         </td>

@@ -22,7 +22,7 @@
     <asp:Label ID="admissionLbl" runat="server" Text="" Visible="false"></asp:Label>
     <asp:Label ID="commonMaxAppLabel" runat="server" Text="0" Visible="false"></asp:Label>
     <asp:Label ID="serviceMaxAppLabel" runat="server" Text="0" Visible="false"></asp:Label>
-    <div class="page-title" style="background-color: white; text-decoration: none; height: 60px; display: flex; align-items: center; justify-content: center;">
+    <div class="page-title-oform-zapis" style="">
         <h1>ОФОРМЛЕНИЕ 
             <br />
             ЗАПИСИ НА ПРИЁМ</h1>
@@ -120,15 +120,15 @@
                                 <div class="call-me-phone-place">
                                     <%--<input type="tel" id="Tel1" placeholder="Номер телефона" runat="server" autopostback="false" />--%>
                                     <input id="callMePhoneTextBox" placeholder="Номер телефона" runat="server" autopostback="false" />
-                                    <asp:RequiredFieldValidator ID="CallMePhoneRfv" runat="server"
+                                    <%--  <asp:RequiredFieldValidator ID="CallMePhoneRfv" runat="server"
                                         ErrorMessage="Необходимо ввести номер телефона"
                                         ControlToValidate="callMePhoneTextBox"
                                         Display="Dynamic"
                                         SetFocusOnError="True"
                                         ToolTip="Обязательное поле"
                                         ValidationGroup="CallMeValidationGroup">
-                                        <span style="color: red; font-weight: 600;">*</span>
-                                    </asp:RequiredFieldValidator>
+                                      <span style="color: red; font-weight: 600;">*</span>
+                                    </asp:RequiredFieldValidator>--%>
                                     <asp:RegularExpressionValidator ID="CallMePhoneRev" runat="server"
                                         ErrorMessage="Введите действительный номер телефона"
                                         ControlToValidate="callMePhoneTextBox"
@@ -165,11 +165,11 @@
                 <asp:PostBackTrigger ControlID="divRecordButtons" /> 
             </Triggers>--%>
             <ContentTemplate>
-                <div class="doctors-container" style="display: flex; justify-content: center;" runat="server">
+                <div class="doctors-container" style="display: flex;flex-wrap: wrap; justify-content: center;" runat="server">
                     <asp:ListView ID="doctorsListView" runat="server" OnItemDataBound="DoctorsListView_ItemDataBound">
                         <ItemTemplate>
                             <div class="list-view" style="display: flex; width: 100%; margin-left: 20px; justify-content: center;" id="dataList">
-                                <table style="width: 100%; table-layout: fixed;">
+                                <table  class="table-list-view" style="width: 100%; margin-bottom: 23px; table-layout: fixed;">
                                     <tr>
                                         <td class="row-for-photo" style="height: 100%;">
                                             <div class="photo-container" style="height: 100%; margin-bottom: 20px;">
@@ -225,57 +225,60 @@
         </asp:UpdatePanel>
         <asp:UpdatePanel ID="UpdatePanelModalDialog" runat="server">
             <ContentTemplate>
-                <div id="modalDialog" class="modal-dialog" style="border-radius: 50px; margin-bottom: 10%;" tabindex="0">
+                <div id="modalDialog" class="modal-dialog" style="border-radius: 50px; margin-bottom: 10%;" tabindex="0" >
                     <%--Онлайн-запись в центр--%>
-                    <div class="d" style="display: flex; justify-content: space-around; height: auto; align-items: center; min-height: 100px;">
-                        <h1 class="note-zapis" style="color: white; font-family: 'Manrope'; font-size: 35px;">
-                            <asp:Label ID="modalHeaderLabel" runat="server" Text=""></asp:Label></h1>
-
-                        <button style="margin-right: 25px; background-color: transparent; font-size: 30px; border: none; color: white;">✕</button>
+                    <div class="d" style="display: flex; justify-content: space-between; align-items: center; min-height: 100px; height: auto; padding: 0 25px;">
+                        <h1 class="note-zapis" style="color: white; font-family: 'Manrope'; font-size: 35px; flex-grow: 1; text-align: center; margin: 0;">
+                            <asp:Label ID="modalHeaderLabel" runat="server" Text=""></asp:Label>
+                        </h1>
+                        <button style="background-color: transparent; font-size: 30px; border: none; color: white; cursor: pointer;">
+                            ✕
+                        </button>
                     </div>
+
                     <div id="window" class="window">
-                        <div class="dialog-title center" style="background-color: rgba(255, 255, 255, 1); color: black;">
-                            <h1 class="dialog-title-note" style="margin-bottom: 5px">ПОДТВЕРЖДЕНИЕ ЗАПИСИ НА ПРИЁМ</h1>
+                        <div class="dialog-title center" style="background-color: rgba(255, 255, 255, 1); color: black; display: flex; justify-content: center;">
+                            <h1 class="dialog-title-note" style="font-weight:600;">ПОДТВЕРЖДЕНИЕ ЗАПИСИ НА ПРИЁМ</h1>
                         </div>
                         <div id="window-style" class="window-style" style="background-color: rgba(255, 255, 255, 1); height: auto;">
-                            <div class="dialog-element left" style="margin-left: 10%;">
+                            <div class="dialog-element left" style="margin-left: 10%;display: flex;align-items: flex-start;gap: 5px;">
                                 <asp:Label ID="branchLabel" runat="server" CssClass="serviceName" Text="Филиал: "></asp:Label>
                                 <asp:Label ID="branchInfoLabel" CssClass="checked-value" runat="server" Text=""></asp:Label>
                             </div>
                             <hr class="dialog-hr" />
-                            <div class="dialog-element left" style="margin-left: 10%;">
+                            <div class="dialog-element left" style="margin-left: 10%;display: flex;align-items: flex-start;gap: 5px;">
                                 <asp:Label ID="branchAddressLabel" runat="server" CssClass="serviceName" Text="Адрес: "></asp:Label>
                                 <asp:Label ID="branchAddressInfoLabel" CssClass="checked-value" runat="server" Text=""></asp:Label>
                             </div>
                             <hr class="dialog-hr" />
-                            <div class="dialog-element left" style="margin-left: 10%;">
+                            <div class="dialog-element left" style="margin-left: 10%;display: flex;align-items: flex-start;gap: 5px;">
                                 <asp:Label ID="serviceNameLabel" runat="server" CssClass="serviceName" Text="Услуга: "></asp:Label>
                                 <asp:Label ID="serviceNameInfoLabel" CssClass="checked-value" runat="server" Text=""></asp:Label>
                             </div>
                             <hr class="dialog-hr" />
-                            <div class="dialog-element left" style="margin-left: 10%;">
+                            <div class="dialog-element left" style="margin-left: 10%;display: flex;align-items: flex-start;gap: 5px;">
                                 <asp:Label ID="priceLabel" runat="server" CssClass="serviceName" Text="Цена: "></asp:Label>
                                 <asp:Label ID="priceInfoLabel" CssClass="checked-value" runat="server" Text=""></asp:Label>
                             </div>
                             <hr class="dialog-hr" />
-                            <div class="dialog-element left" style="margin-left: 10%;">
+                            <div class="dialog-element left" style="margin-left: 10%;display: flex;align-items: flex-start;gap: 5px;">
                                 <asp:Label ID="dateLabel" runat="server" CssClass="serviceName" Text="Дата приёма: "></asp:Label>
                                 <asp:Label CssClass="checked-value" ID="dateInfoLabel" runat="server" Text=""></asp:Label>
                             </div>
                             <hr class="dialog-hr" />
-                            <div class="dialog-element left" style="margin-left: 10%;">
+                            <div class="dialog-element left" style="margin-left: 10%;display: flex;align-items: flex-start;gap: 5px;">
                                 <asp:Label ID="timeLabel" runat="server" CssClass="serviceName" Text="Время приёма: "></asp:Label>
                                 <asp:Label CssClass="checked-value" ID="timeInfoLabel" runat="server" Text=""></asp:Label>
                             </div>
                             <hr class="dialog-hr" />
-                            <div class="dialog-element left" style="margin-left: 10%;">
+                            <div class="dialog-element left" style="margin-left: 10%;display: flex;align-items: flex-start;gap: 5px;">
                                 <asp:Label ID="doctorNameLabel" runat="server" CssClass="serviceName" Text="Принимающий доктор: "></asp:Label>
                                 <asp:Label CssClass="checked-value" ID="doctorNameInfoLabel" runat="server" Text=""></asp:Label>
                             </div>
                             <hr class="dialog-hr" />
                             <%-- Приглашение подтвердить номер телефона --%>
-                            <div id="phoneConfirmOffer" class="dialog-element left phoneConfirmOffer">
-                                <div class="dialog-element center left-offset">
+                            <div id="phoneConfirmOffer" class="dialog-element left phoneConfirmOffer" =>
+                                <div class="dialog-element center left-offset" >
                                     <div class="checkbox-row">
                                         <asp:CheckBox ID="personalDataHandlingCheckBox" CssClass="checkBox-button" runat="server" Checked="true" />
                                         <span class="checkBox-text">Я принимаю 
@@ -298,7 +301,7 @@
                                         SetFocusOnError="True"
                                         ToolTip="Обязательное поле"
                                         ValidationGroup="ModalDialogValidationGroup">
-                                        <span style="color: red; font-weight: 600;">*</span>
+                                        <%--<span style="color: red; font-weight: 600;">*</span>--%>
                                     </asp:RequiredFieldValidator>
                                     <asp:RegularExpressionValidator ID="phoneRev" runat="server"
                                         ErrorMessage="Введите действительный номер телефона"
@@ -308,7 +311,7 @@
                                         Display="Dynamic"
                                         Enabled="false"
                                         ValidationGroup="ModalDialogValidationGroup">
-                                    <span style="color: red; font-weight: 600;">*</span>
+                                 <%--   <span style="color: red; font-weight: 600;">*</span>--%>
                                     </asp:RegularExpressionValidator>
                                     <asp:Button ID="confirmPhoneButton" CssClass="simple-button" runat="server" Text="Получить код" OnClick="ConfirmPhoneButton_Click" ValidationGroup="ModalDialogValidationGroup" />
 
@@ -323,7 +326,7 @@
                         <div id="phoneConfirmForm" class="phoneConfirmForm dialog-element center">
                             <asp:Label ID="codeWasRequestedLabel" runat="server" Text="0" Visible="false"></asp:Label>
                             <asp:Label ID="tryAmountLabel" runat="server" Text="0" Visible="false"></asp:Label>
-                            <div class="dialog-element center">
+                            <div class="dialog-element center" style="width: 100%;display: flex;    margin-bottom: 5px;">
                                 <asp:TextBox CssClass="codeTextBox" ID="codeTextBox" runat="server" placeHolder="Введите код" AutoCompleteType="Disabled"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="codeRfv" runat="server" ErrorMessage="Необходимо ввести код подтверждения" ControlToValidate="codeTextBox" ToolTip="Обязательное поле" Enabled="false" Display="Static" ValidationGroup="ModalDialogValidationGroup"><span style="color: red; font-weight: 600;">*</span></asp:RequiredFieldValidator>
                                 <asp:Button CssClass="simple-button" ID="codeConfirmButton" runat="server" Text="Записаться" OnClick="CodeConfirmButton_Click" ValidationGroup="ModalDialogValidationGroup" />
@@ -345,9 +348,10 @@
                             <asp:ValidationSummary ID="fieldsValidationSummary" runat="server" ValidationGroup="ModalDialogValidationGroup" />
                         </div>
                     </div>
-                    <div class="d" style="background-color: #258cd1; border-bottom-left-radius: 50px; border-bottom-right-radius: 50px; display: flex; justify-content: space-around; height: 25px; line-height: 25px; align-items: center;">
-                        <span class="noteSize" style="border-bottom-left-radius: 15px 15px; border-bottom-right-radius: 15px 15px; color: white; font-family: 'Manrope'; background-color: #258cd1;">Сервис онлайн-записи МИС "Медицинский Помощник"</span>
+                    <div class="modal-footer">
+                        <span>Сервис онлайн-записи МИС "Медицинский Помощник"</span>
                     </div>
+
                 </div>
                 <asp:Label ID="appInfoLabel" runat="server" Visible="false"></asp:Label>
                 <div id="resultModalDialog" class="modal-dialog" tabindex="0">
@@ -365,24 +369,25 @@
                             <asp:Button ID="backToClientSiteButton" CssClass="simple-button dialog-button full-width" runat="server" Text="Вернуться на сайт мед.центра" OnClick="BackToClientSiteButton_Click" />
                         </div>
                     </div>
-                </div>
-                <div id="TermsModalDialog" class="modal-dialog">
-                    <div id="TermsWindow" class="window">
-                        <div class="dialog-title center" style="position: relative">
-                            <p>Условия передачи информации</p>
-                            <div class="close-button" onclick="CloseTermsInfoDialog(); return false;">
-                                X
-                            </div>
+                </div> 
+                <!-- Модальное окно -->
+                <div id="TermsModalDialog" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0,0,0,0.5); justify-content: center; align-items: center; z-index: 1000;">
+                    <div id="TermsWindow" style="background-color: white; width: 50%; max-width: 600px; height: 50%; max-height: 400px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); display: flex; flex-direction: column; overflow: hidden; position: relative;">
+                        <!-- Заголовок -->
+                        <div style="background-color: #258cd1; color: white; padding: 15px 40px 15px 20px; font-size: 1.25rem; font-weight: 600; border-top-left-radius: 15px; border-top-right-radius: 15px; display: flex; align-items: center; justify-content: center; position: relative;">
+                            <p style="margin: 0; flex-grow: 1; text-align: center;">Условия передачи информации</p>
+                            <button onclick="CloseTermsInfoDialog(); return false;" aria-label="Закрыть модальное окно" style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%); background: transparent; border: none; color: white; font-size: 1.5rem; cursor: pointer; line-height: 1; padding: 0; width: 30px; height: 30px;">
+                                ×
+                            </button>
                         </div>
-                        <div class="dialog-element left">
-                            <p class="terms-info">Подтверждаю, что введённый мной номер телефона является корректным.</p>
-                            <p class="terms-info">Подтверждаю, что данные предоставляются добровольно.</p>
-                            <p class="terms-info">Выражаю полное и безоговорочное согласие на использование введённого номера телефона для отправки СМС-сообщений (или whatsapp сообщения) на указанный номер телефона для идентификации номера телефона с помощью проверочного кода и для информирования о сделанной записи через сервис "Онлайн-запись с сайта".</p>
-                            <p class="terms-info">Согласие предоставляется ИП Хари Михаил Игоревич (ОГРНИП 320547600078431) мной бессрочно.</p>
-                            <p class="terms-info">Я проинформирован о том, что согласие может быть отозвано в любой момент путем направления электронного письма на адрес: medhelp54@yandex.ru.</p>
-                        </div>
-                        <div class="dialog-element center">
-                            <asp:Button CausesValidation="False" ID="closeButton" runat="server" Text="Закрыть" CssClass="dialog-button simple-button" OnClientClick="CloseTermsInfoDialog(); return false;" />
+
+                        <!-- Контент с прокруткой -->
+                        <div style="padding-right: 20px;padding-left: 20px; overflow-y: auto; flex-grow: 1; font-size: 0.9rem; line-height: 1.4;">
+                            <p>Подтверждаю, что введённый мной номер телефона является корректным.</p>
+                            <p>Подтверждаю, что данные предоставляются добровольно.</p>
+                            <p>Выражаю полное и безоговорочное согласие на использование введённого номера телефона для отправки СМС-сообщений (или whatsapp сообщения) на указанный номер телефона для идентификации номера телефона с помощью проверочного кода и для информирования о сделанной записи через сервис "Онлайн-запись с сайта".</p>
+                            <p>Согласие предоставляется ИП Хари Михаил Игоревич (ОГРНИП 320547600078431) мной бессрочно.</p>
+                            <p>Я проинформирован о том, что согласие может быть отозвано в любой момент путем направления электронного письма на адрес: medhelp54@yandex.ru.</p>
                         </div>
                     </div>
                 </div>

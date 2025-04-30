@@ -6,8 +6,8 @@
 <asp:Content ID="BackButton" ContentPlaceHolderID="BackButton" runat="server"></asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContentPlaceHolder" Runat="Server">  
     <%--<a href="https://medhelponline.ru/ServicesPrice.aspx?BusinessID=A6Py2GvhRFsa1" style="padding: 20px; position: absolute;">Туц</a>--%>
-    <a href="ServicesPrice.aspx?BusinessID=foai!231xz@af2" style="padding: 20px; position: absolute;">Туц</a>
-    <%--<a href="ServicesPrice.aspx?BusinessID=b1TFYQutXH4plOi&SpecID=УЗИ&ClientID=113373&FilialID=1&TokenID=KATAXZ40CC8QH4KS4KBH" style="padding: 20px; position: absolute;">Туц с спец</a>--%>
+    <a href="ServicesPrice.aspx?BusinessID=A6Py2GvhRFsa1" style="padding: 20px; position: absolute;">Туц</a>
+    <%--<a href="ServicesPrice.aspx?BusinessID=foai!231xz@af2&SpecID=УЗИ&ClientID=113373&FilialID=1&TokenID=KATAXZ40CC8QH4KS4KBH" style="padding: 20px; position: absolute;">Туц с спец</a>--%>
     <%--<a href="ServicesPrice.aspx?BusinessID=RvzUwSiPKm&SpecID=УЗИ" style="padding: 20px; position: absolute;">Туц с спец</a>--%>
     <div style="padding: 20px; text-align: center;">
         <div style="clear: both; margin: 20px auto">
@@ -22,3 +22,5 @@
         </div>
     </div>
 </asp:Content>
+<%--A6Py2GvhRFsa1--%>
+<%--foai!231xz@af2--%>

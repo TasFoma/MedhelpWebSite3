@@ -47,9 +47,9 @@ span, h1, h3 {
 }
 
 .record-buttons, .schedule-time {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; 
+    display: flex; 
+    flex-wrap: wrap;
+    gap: 5px;
 }
  
 .schedule-time {
@@ -75,6 +75,23 @@ span, h1, h3 {
 .change-week { 
     margin-top: 13px;
 }
+.window {
+    overflow-y: scroll;
+}
+.modal-footer {
+    background: #258cd1;
+    color: #fff;
+    text-align: center;
+    font-family: 'Manrope', sans-serif;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    min-height: 25px;
+    line-height: 25px;
+    padding: 8px 24px;
+    font-size: 14px;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
 
 .prev-week-button,
 .next-week-button {
@@ -88,6 +105,7 @@ span, h1, h3 {
     background: none;
     cursor: pointer;
     color: #258cd1;
+    margin-top: 7px;
 }
 
 /*.day-of-week-button,
@@ -163,9 +181,9 @@ span, h1, h3 {
 }
 
 .lo-business-day {
-    color:white;
-    /*border-color: #569f59;*/
-    background: #258cd1;
+    color: #258cd1;
+    border-color: #258cd1;
+    background: #ecf7ff;
 }
 
 .medium-business-day {
@@ -189,7 +207,6 @@ span, h1, h3 {
 }
 
 .branch-container {
-    overflow-x:scroll;
     display: flex;
     align-items: center;
     background-color: white;
@@ -225,7 +242,9 @@ span, h1, h3 {
     align-items: center;
     font-weight: normal;
     font-family: 'Manrope';
-    background: rgba(246, 246, 246, 1);
+    /* background: rgba(246, 246, 246, 1);*/
+    background-color: white;
+    border: 2px solid #258cd1;
     /* margin-bottom: 20px;*/
     color: black;
     font-weight: normal;
@@ -270,6 +289,7 @@ span, h1, h3 {
     font-family: 'Manrope';
     border-width: 3px;
     border-color: #258cd1;
+    background-color: #258cd1;
     color: #fff;
 }
 .blackday {
@@ -335,40 +355,33 @@ span, h1, h3 {
     list-style-type: none;
     color: red;
 }
-
-@media (max-width: 605px) {
-    .window {
-        overflow-y: scroll;
-        height: 60%;
-    }
-    .day-of-week,
-    .next-week, .time-button {
-        font-weight: normal;
-        font-family: 'Manrope';
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        height: 50px;
-        margin: 0;
-        margin-right: 5px;
-    }
-}
-
-@media only screen and (min-width: 240px) and (max-width: 480px) {
-    .window {
-        overflow-y: scroll;
-        height: 60%;
-    }
+/* стили для телефонов */
+@media (max-width: 768px) {
+ .window {
+            overflow-y: scroll;
+            height: 60%;
+        }
     body,
     #form1 {
         overflow-x: hidden;
     }
-
     .container {
         max-width: 480px;
         min-width: 320px;
     }
-
+    .day-of-week-button {
+        width: 20px;
+        margin-bottom: 5px;
+        height: 45px; 
+        padding: 5px;
+        font-size: 14px;
+        min-width: 30px;
+    }
+    .day-of-week, .time-button { 
+        width: 1%;
+        min-width: 20px;
+        margin-right: 5px;
+    }
     .day-of-week,
     .next-week, .time-button {
         font-weight: normal;
@@ -376,38 +389,13 @@ span, h1, h3 {
         display: flex;
         flex-direction: column;
         align-items: center;
+        /*   height: 61px;*/
         height: 50px;
         margin: 0 1px;
-        margin-right: 5px;
     }
-
-    .day-of-week-button {
-        width:20px;
-        margin-bottom: 5px; 
-        height: 45px;
-    }
-    .day-of-week-button {
-        margin-bottom: 5px;
-        height: 28px;
-        padding: 5px;
-        font-size: 14px;
-        min-width: 30px;
-    }
-
-    .day-of-week, .time-button {
-        font-weight: normal;
-        font-family: 'Manrope';
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 1%;
-        min-width: 20px;
-        margin-right: 5px;
-    }
-
     .change-week {
-        display: flex; 
-    } 
+        display: flex;
+    }
     .prev-week-button,
     .next-week-button {
         display: flex;
@@ -420,8 +408,8 @@ span, h1, h3 {
         background: none;
         cursor: pointer;
         color: #258cd1;
+        margin-top: 7px;
     }
-
     .hint {
         width: Calc(50% - 10px);
     }
@@ -429,141 +417,43 @@ span, h1, h3 {
     .inner-hint-container {
         width: 100%;
     }
-
-    .recording-button {
-        min-width: auto;
-    }
     .schedule {
         display: flex;
-        /*  display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(44px, 1fr));*/
         gap: 4px;
         width: 100%;
         margin: 0 auto;
-        padding: 0 8px;
     }
-}
-
-@media only screen and (min-width: 320px) and (max-width: 345px) {
-    .window {
-        overflow-y: scroll;
-    }
-    .container {
-        max-width: 345px;
-    }
-
-    .day-of-week,
-    .next-week, .time-button {
-        font-weight: normal;
-        font-family: 'Manrope';
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        /*   height: 61px;*/
-        height: 50px;
-        margin: 0 1px;
-    }
-    .day-of-week-button {
-        width: 20px;
-        margin-bottom: 5px;
-        height: 45px;
-    }
-    .day-of-week-button {
-        margin-bottom: 5px;
-        height: 20px;
-    }
-    .day-of-week-button {
-        margin-bottom: 5px;
-        height: 28px;
-        padding: 5px;
-        font-size: 14px;
-        min-width: 30px;
-    }
-    .day-of-week, .time-button {
-        font-weight: normal;
-        font-family: 'Manrope';
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 5%;
-        min-width: 20px;
-    }
-
     .hint-container {
         width: Calc(100% - 10px);
     }
 
     .record-buttons {
-        margin-left: 26px;
-        justify-content: space-between;
-    }
-}
-
-@media only screen and (min-width: 240px) and (max-width: 319px) {
-   
-    .window {
-        overflow-y: scroll;
-    }
-    .container {
-        max-width: 319px;
-        min-width: 240px;
-    }
-
-    .day-of-week,
-    .next-week, .time-button {
-        font-weight: normal;
-        font-family: 'Manrope';
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        /*height: 49px;*/
-        height: 50px;
-        margin: 0 0.5px;
+        justify-content: flex-start;
+        flex-wrap: wrap;
     }
-    .day-of-week-button {
-        margin-bottom: 5px;
-        height: 28px;
-        padding: 5px;
-        font-size: 14px;
-        min-width: 30px;
-    }
-
-    .day-of-week, .time-button {
-        font-weight: normal;
-        font-family: 'Manrope';
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 4%;
-        min-width: 28px;
-    }
-
-    .record-buttons {
-        margin-left: 30px;
-        justify-content: space-between;
-    }
-
     .recording-button {
-        min-width: auto;
+            min-width: auto;
+        }
+    .schedule-time {
+            display: flex;
+            align-items: center;
+            padding-bottom: 10px;
+            justify-content: space-between;
+        }
+}
+ 
+    .disabled-prev-week-button, .disabled-next-week-button {
+        color: #bebebe;
+        border-left-color: #bebebe;
     }
 
-    schedule-time {
-        display:flex;
-        align-items:center;
-        padding-bottom: 10px;
-        justify-content: space-between;
+    .week-button {
+        font-size: 300px;
     }
-}
 
-.disabled-prev-week-button, .disabled-next-week-button {
-    color: #bebebe;
-    border-left-color: #bebebe;
-}
-.week-button {
-    font-size: 300px;
-}
-.day-of-week-label {
-    margin-bottom: 5px;
-    font-weight: normal;
-    font-family: 'Manrope';
-}
+    .day-of-week-label {
+        margin-bottom: 5px;
+        font-weight: normal;
+        font-family: 'Manrope';
+    }
