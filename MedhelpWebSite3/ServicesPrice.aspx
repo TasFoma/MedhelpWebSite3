@@ -29,6 +29,7 @@
         function handleClick(element) {
             var hiddenRecord = $(element).find('.hiddenRecord');
             var signUpLinkButton = $(element).find('.my-link-sign-up');
+
             if (hiddenRecord.find('.comment').text().trim() !== '') {
                 console.log('Коммент hiddenRecord.fin');
                 hiddenRecord.toggleClass('hidden-record');
@@ -43,11 +44,15 @@
                     signUpLinkButton[0].click();
                     ShowLoading();
                     console.log('ShowLoading ');
+
+                    // Скрываем блок FirstHiddenRecord
+                    hiddenRecord.hide(); // или hiddenRecord.css('display', 'none');
                 } else {
                     console.log('Кнопка "Записаться" не найдена');
                 }
             }
         }
+
 
         $(document).ready(function () {
             if (/ip(hone|od)|ipad|macintosh/i.test(navigator.userAgent)) {

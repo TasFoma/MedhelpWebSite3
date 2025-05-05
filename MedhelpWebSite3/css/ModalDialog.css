@@ -101,6 +101,9 @@
 .serviceName {
     font-weight: bold;
     font-size:25px;
+  /*  word-break:break-word;*/
+    overflow-wrap:break-word;
+    white-space:normal;
 }
  /*.dialog-element.center {
     display: flex;
@@ -109,7 +112,12 @@
     justify-content: flex-start;
     margin-left: 10%;
     height: 80px;
-}*/ 
+}*/
+.dialog-element.left {
+    margin-left:10%;
+    margin-right:10%;
+    width:85%;
+}
 .modal-dialog-background {
     position: fixed;
     top: 0;

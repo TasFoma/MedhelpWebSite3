@@ -74,10 +74,7 @@ span, h1, h3 {
 
 .change-week { 
     margin-top: 13px;
-}
-.window {
-    overflow-y: scroll;
-}
+} 
 .modal-footer {
     background: #258cd1;
     color: #fff;
@@ -357,10 +354,11 @@ span, h1, h3 {
 }
 /* стили для телефонов */
 @media (max-width: 768px) {
- .window {
-            overflow-y: scroll;
-            height: 60%;
-        }
+    .window {
+        overflow-y: scroll;
+        overflow-x: hidden;
+        height: 60%;
+    }
     body,
     #form1 {
         overflow-x: hidden;
