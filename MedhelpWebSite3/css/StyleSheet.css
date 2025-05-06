@@ -1,11 +1,9 @@
 ﻿* {
     font-family: cambria,Times New Roman,cambria, Georgia, Times, serif;
 }
-
 #header br {
     display: none;
 }
-
 html,
 body,
 #form1 {
@@ -13,7 +11,7 @@ body,
 }
 
 .no-right-click {
-    pointer-events: none;
+    pointer-events: none; 
 }
 
 h1,
@@ -111,10 +109,10 @@ header {
     -ms-flex: 0 0 auto;
     flex: 0 0 auto;
     padding: 20px;
-    /* margin-bottom: 5px;*/
+   /* margin-bottom: 5px;*/
     background: #258cd1;
     color: white;
-    /* font-weight: 600;*/
+  /* font-weight: 600;*/ 
     font-size: 20px;
     text-align: center;
     position: relative;
@@ -206,7 +204,7 @@ aside {
         text-decoration: none;
         outline: none;
         letter-spacing: 1px;
-        /* font-weight: 300;*/
+      /* font-weight: 300;*/ 
         color: inherit;
         display: block;
         padding: 20px;
@@ -233,9 +231,9 @@ aside {
 
 .inner-search-block {
     /* background: #258cd1;*/
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
     color: rgba(0, 0, 0, 1);
     width: 100%;
 }
@@ -264,11 +262,10 @@ aside {
     background-color: rgba(246, 246, 246, 1);
     height: 50px;
     border-bottom: 1px solid rgba(223, 223, 223, 1);
-    border-radius: 10px;
-    position: relative;
+    border-radius: 10px; 
+    position:relative;
     /* overflow: hidden;*/
 }
-
 .search-textbox {
     border: none;
     background-color: transparent;
@@ -277,22 +274,19 @@ aside {
     height: 50px;
     padding-left: 20px;
 }
-
 .search-button {
-    position: absolute;
-    right: 10px;
+    position:absolute;
+   right:10px;
     border: none;
     background-color: transparent;
     outline: none;
     height: 50px;
 }
-
 .search-icon {
-    color: #258cd1;
-    font-size: 1.5em;
+   color: #258cd1;
+   font-size:1.5em;
 }
-
-.dropDownList {
+.dropDownList { 
     width: Calc(100% - 85px);
     color: rgba(0, 0, 0, 1);
     height: 50px;
@@ -302,7 +296,6 @@ aside {
     padding-left: 20px;
     margin: 0 20px 0 20px;
 }
-
 select {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -316,7 +309,6 @@ select {
     select::-ms-expand {
         display: none;
     }
-
 .list-view {
     border-bottom: 1px solid #808080;
     margin-bottom: 0;
@@ -370,7 +362,7 @@ select {
 .main-span,
 .main-additional-info,
 .additional-info {
-    /* font-weight: 600;*/
+   /* font-weight: 600;*/
     font-size: 20px;
     margin: 0 auto;
 }
@@ -382,7 +374,7 @@ select {
 
 .doctor-additional-info {
     margin: 0;
-    /* font-weight: 600;*/
+   /* font-weight: 600;*/
 }
 
 .mh {
@@ -404,7 +396,7 @@ select {
     }
 
 .additional-span {
-    /*font-weight: 400;*/
+   /*font-weight: 400;*/ 
     font-size: 14px;
     max-height: 100px;
 }
@@ -412,20 +404,18 @@ select {
 .taj {
     text-align: justify;
 }
-
 .my-link-sign-up {
     color: #258cd1;
     text-decoration: none;
     background-color: transparent;
     margin-right: 20px;
 }
-
     .my-link-sign-up:hover {
         text-decoration: underline;
-        background-color: transparent;
+        background-color:transparent;
         color: #258cd1;
-        font-size: 20px;
-        font-weight: 600;
+        font-size:20px;
+        font-weight:600;
     }
 
 .price-list-view-container {
@@ -446,16 +436,16 @@ select {
 
 .price-list-view {
     /*  padding: 0 20px;
-      border-bottom: 1px solid #808080;*/
+      border-bottom: 1px solid #808080;*/ 
     width: 100%;
     color: rgba(0, 0, 0, 1);
     background-color: rgba(246, 246, 246, 1);
-    /*  border-bottom: 1px solid rgba(223, 223, 223, 1);
+  /*  border-bottom: 1px solid rgba(223, 223, 223, 1);
     border-radius: 10px;*/
 }
 
     .price-list-view .title {
-        width: 100%;
+        width: 100% ;
     }
 
     .price-list-view:last-child {
@@ -463,11 +453,10 @@ select {
     }
 
     .price-list-view:hover {
-        color: white;
+        color:white;
         cursor: pointer;
         background: #258cd1;
     }
-
         .price-list-view:hover .my-link-sign-up {
             color: white !important;
             cursor: pointer;
@@ -494,12 +483,12 @@ select {
 
 .additional-price-td {
     visibility: collapse;
-    /* font-weight: 600;*/
+   /* font-weight: 600;*/
 }
 
 .additional-appointment-button-container {
     visibility: collapse;
-}
+} 
 
 .hidden-record {
     /*visibility: collapse;*/
@@ -522,7 +511,7 @@ select {
     text-transform: uppercase;
     /*font-weight: 600;*/
     letter-spacing: 0.07em;
-    /* padding: 10px;*/
+   /* padding: 10px;*/
 }
 
 .information-button {
@@ -538,7 +527,7 @@ select {
 }
 
 .small-button {
-    /* font-weight: 400;*/
+   /* font-weight: 400;*/
     font-size: 10px;
     letter-spacing: normal;
 }
@@ -567,7 +556,7 @@ select {
     font-family: 'Manrope';
     /* font-weight: bold;*/
     width: Calc(100% - 40px);
-    margin-top: 10px;
+   margin-top: 10px;
     margin-bottom: 10px;
     margin-left: 43px;
 }
@@ -586,7 +575,7 @@ footer {
     -webkit-flex: 0 0 auto;
     -ms-flex: 0 0 auto;
     flex: 0 0 auto;
-    /* margin-top: 5px;*/
+  /* margin-top: 5px;*/ 
     padding: 10px;
     /*background: green;*/
     background: #4c5866;
@@ -636,22 +625,18 @@ footer {
 .no-margin {
     margin: 0;
 }
-
 .selected-service {
-    background-color: #ffcccc;
+    background-color: #ffcccc; 
 }
-
 .active-service {
     background-color: #75b9e6 !important;
 }
+  .hiddenRecord:hover, my-link-sign-up {
+        color: white;
+    }
+.active-service:hover{
 
-.hiddenRecord:hover, my-link-sign-up {
-    color: white;
 }
-
-.active-service:hover {
-}
-
 .page-title-oform-zapis {
     margin-top: 15px;
     background-color: white;
@@ -663,9 +648,9 @@ footer {
 }
 /* стили для телефонов */
 @media (max-width: 768px) {
-
+    
     .page-title-oform-zapis {
-        margin-top: 15px;
+        margin-top:15px;
         background-color: white;
         text-decoration: none;
         display: flex;
@@ -673,167 +658,142 @@ footer {
         justify-content: center;
         height: 30px;
     }
-
     .table-list-view {
         margin-left: 10px;
     }
-
     .errorMessage {
         font-size: 10px;
         color: red;
         margin-top: 50px;
     }
-
     #header br {
         display: initial;
-    }
-
+    } 
     .schedule {
-        /*  overflow-x: scroll;*/
+      /*  overflow-x: scroll;*/
         width: 100%;
-    }
-
+    } 
     body,
     #form1 {
         overflow: visible;
     }
-
     .container {
         max-width: 480px;
         min-width: 320px;
         width: 100%;
     }
-
     .price-list-view-container {
         overflow-y: scroll;
         height: 200px;
-    }
-
+    }  
     .row-for-photo,
     .photo-container,
     .photo {
         width: 80px;
         height: 80px;
     }
-
     .photo-container {
         padding: 20px 5px 0 5px;
         padding-left: 20px;
         width: 60px;
     }
-
     header,
     footer {
         width: auto;
     }
-
     .search-button {
         padding-right: 10px;
     }
-
     .link.space {
         margin-left: -20px;
     }
-
     .service-name-td {
         min-width: 170px;
     }
-
     .title {
         font-size: 14px;
     }
-
     .comment {
         font-size: 12px;
     }
-
-        .comment:hover {
-            color: white !important;
-            /* transform:color 0.2s;*/
-        }
-
+    .comment:hover {
+        color:white !important;
+       /* transform:color 0.2s;*/
+    }
     .service-price-td {
         padding-right: 5px;
-    }
-
+    } 
     h1 {
         font-size: 15px;
     }
-
     .appointment-picking-title {
         font-size: 19px;
     }
-
-    .photo-container,
-    .photo {
-        width: 60px;
-        height: 100%;
-    }
-
-    .service-price-td,
-    .appointment-button-container {
-        visibility: collapse;
-        padding: 0;
-    }
-
-    .additional-price-td,
-    .additional-appointment-button-container {
-        visibility: visible;
-    }
-
-    .service-name-td,
-    .additional-appointment-button-container {
-        width: 220px;
-    }
-
-    header {
-        font-size: 16px;
-    }
-
-    .main-additional-info {
-        font-size: 16px;
-    }
+        .photo-container,
+        .photo {
+            width: 60px;
+            height: 100%;
+        } 
+        .service-price-td,
+        .appointment-button-container {
+            visibility: collapse;
+            padding: 0;
+        }
+        .additional-price-td,
+        .additional-appointment-button-container {
+            visibility: visible;
+        }
+        .service-name-td,
+        .additional-appointment-button-container {
+            width: 220px;
+        }
+        header {
+            font-size: 16px;
+        }
+        .main-additional-info {
+            font-size: 16px;
+        }
 }
 
-@media only screen and (min-width: 768px) {
-    .content-wrap {
-        width: 100%;
+    @media only screen and (min-width: 768px) {
+        .content-wrap {
+            width: 100%;
+        }
     }
-}
-/*Специфичный для microsoft (IE) запрос, это нужно, потому что в IE не работает display: flex*/
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-    .container,
-    .main-content {
-        display: block;
-    }
+    /*Специфичный для microsoft (IE) запрос, это нужно, потому что в IE не работает display: flex*/
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        .container,
+        .main-content {
+            display: block;
+        }
 
-    .container {
-        position: relative;
-        min-height: 100%;
-        background: #fff;
-    }
+        .container {
+            position: relative;
+            min-height: 100%;
+            background: #fff;
+        }
 
-    .content-wrap {
-        height: 100%;
-        background-color: rgba(246, 246, 246, 1);
-    }
+        .content-wrap {
+            height: 100%;
+            background-color: rgba(246, 246, 246, 1);
+        }
 
-    .main-content {
-        padding: 61px 0;
-    }
+        .main-content {
+            padding: 61px 0;
+        }
 
-    header,
-    footer {
-        position: absolute;
-        left: 0;
-        width: auto;
-    }
+        header,
+        footer {
+            position: absolute;
+            left: 0;
+            width: auto;
+        }
 
-    header {
-        top: 0;
-    }
+        header {
+            top: 0;
+        }
 
-    footer {
-        bottom: 0;
+        footer {
+            bottom: 0;
+        }
     }
-}
