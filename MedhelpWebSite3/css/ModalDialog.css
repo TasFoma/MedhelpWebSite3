@@ -113,11 +113,11 @@
     margin-left: 10%;
     height: 80px;
 }*/
-.dialog-element.left {
+/*.dialog-element.left {
     margin-left:10%;
     margin-right:10%;
     width:85%;
-}
+}*/
 .modal-dialog-background {
     position: fixed;
     top: 0;
@@ -173,8 +173,8 @@
     background: #258cd1; /* #e6e6e6*/
     z-index: 2;
     display: none;
-    width: 60%;
-    height: 80%;
+   /* width: 60vw;
+    height: 50vw;*/
 }
 input[type="checkbox"].checkBox-button {
     width: 25px;
@@ -392,9 +392,9 @@ h3:hover {
         margin-top: 0px;
     }
     .modal-dialog {
-        height: 60%;
+       /* height: 60%;
         min-width: 320px;
-        max-width: 320px;
+        max-width: 320px;*/
     }
     .dialog-element {
         /* padding: 5px 5px 0 5px;*/

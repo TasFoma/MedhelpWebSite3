@@ -1,6 +1,6 @@
-﻿document.addEventListener('contextmenu', function (e) {
+﻿/*document.addEventListener('contextmenu', function (e) {
     e.preventDefault();
-});
+});*/
 function ShowFrame() {
     var href = "https://medhelponline.ru/ServicesPrice.aspx?BusinessID=b1TFYQutXH4plOi";
     var isMobile = false; //initiate as false

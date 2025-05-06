@@ -177,23 +177,25 @@
                                             </div>
                                         </td>
                                         <td>
-                                            <div id="divDoctorFullName" class="main-table-info" style="display: flex;" runat="server">
-                                                <div style="width: auto; display: flex; align-items: center; margin-right: 10px;">
-                                                    <asp:Label CssClass="main-additional-info main-span no-margin" ID="doctorFullName" runat="server" Text='<%#Eval("Full_Name") %>'></asp:Label>
+                                            <div class="main-table-info-container" style="padding: 20px 20px 0 0;">
+                                                <div id="divDoctorFullName" class="main-table-info" style="display: flex;" runat="server">
+                                                    <div style="width: auto; display: flex; align-items: center; margin-right: 10px;">
+                                                        <asp:Label CssClass="main-additional-info main-span no-margin" ID="doctorFullName" runat="server" Text='<%#Eval("Full_Name") %>'></asp:Label>
+                                                    </div>
+                                                    <div>
+                                                        <asp:Button ID="informationButton" runat="server" Text="i" CssClass="simple-button information-button" />
+                                                    </div>
+                                                    <asp:Label ID="doctorIDLabel" runat="server" Text='<%#Eval("Id_Doctor") %>' Visible="false"></asp:Label>
                                                 </div>
-                                                <div>
-                                                    <asp:Button ID="informationButton" runat="server" Text="i" CssClass="simple-button information-button" />
+                                                <div class="doctor-info" id="specialtyDiv" runat="server">
+                                                    <p class="doctor-additional-info">Специальность: <span class="additional-span" id="specialtySpan" runat="server"></span></p>
                                                 </div>
-                                                <asp:Label ID="doctorIDLabel" runat="server" Text='<%#Eval("Id_Doctor") %>' Visible="false"></asp:Label>
-                                            </div>
-                                            <div class="doctor-info" id="specialtyDiv" runat="server">
-                                                <p class="doctor-additional-info">Специальность: <span class="additional-span" id="specialtySpan" runat="server"></span></p>
-                                            </div>
-                                            <div class="doctor-info" id="experienceDiv" runat="server">
-                                                <p class="doctor-additional-info">Стаж: <span class="additional-span" id="experienceSpan" runat="server"></span></p>
-                                            </div>
-                                            <div class="doctor-info" id="additionalDiv" runat="server">
-                                                <p class="doctor-additional-info mh">Дополнительно: <span class="additional-span-dop-info taj" id="additionalSpan" runat="server"></span></p>
+                                                <div class="doctor-info" id="experienceDiv" runat="server">
+                                                    <p class="doctor-additional-info">Стаж: <span class="additional-span" id="experienceSpan" runat="server"></span></p>
+                                                </div>
+                                                <div class="doctor-info" id="additionalDiv" runat="server">
+                                                    <p class="doctor-additional-info mh">Дополнительно: <span class="additional-span-dop-info taj" id="additionalSpan" runat="server"></span></p>
+                                                </div>
                                             </div>
                                         </td>
                                     </tr>
@@ -225,13 +227,13 @@
         </asp:UpdatePanel>
         <asp:UpdatePanel ID="UpdatePanelModalDialog" runat="server">
             <ContentTemplate>
-                <div id="modalDialog" class="modal-dialog" style="border-radius: 50px; margin-bottom: 10%;" tabindex="0" >
+                <div id="modalDialog" class="modal-dialog" style="border-radius: 50px;" tabindex="0" >
                     <%--Онлайн-запись в центр--%>
                     <div class="d" style="display: flex; justify-content: space-between; align-items: center; min-height: 100px; height: auto; padding: 0 25px;">
                         <h1 class="note-zapis" style="color: white; font-family: 'Manrope'; font-size: 35px; flex-grow: 1; text-align: center; margin: 0;">
                             <asp:Label ID="modalHeaderLabel" runat="server" Text=""></asp:Label>
                         </h1>
-                        <button style="background-color: transparent; font-size: 30px; border: none; color: white; cursor: pointer;">
+                        <button  type="submit"  onclick="javascript:CloseModalDialog(); return false;" id="MainContentPlaceHolder_cancelButton" style="background-color: transparent; font-size: 30px; border: none; color: white; cursor: pointer;">
                             ✕
                         </button>
                     </div>
@@ -388,7 +390,7 @@
                             <p>Выражаю полное и безоговорочное согласие на использование введённого номера телефона для отправки СМС-сообщений (или whatsapp сообщения) на указанный номер телефона для идентификации номера телефона с помощью проверочного кода и для информирования о сделанной записи через сервис "Онлайн-запись с сайта".</p>
                             <p>Согласие предоставляется ИП Хари Михаил Игоревич (ОГРНИП 320547600078431) мной бессрочно.</p>
                             <p>Я проинформирован о том, что согласие может быть отозвано в любой момент путем направления электронного письма на адрес: medhelp54@yandex.ru.</p>
-                        </div>
+                        </div>✕
                     </div>
                 </div>
                 <div id="modalDialogBackground" class="modal-dialog-background">

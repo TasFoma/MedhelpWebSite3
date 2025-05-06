@@ -11,7 +11,7 @@ body,
 }
 
 .no-right-click {
-    pointer-events: none;
+    pointer-events: none; 
 }
 
 h1,
@@ -407,26 +407,31 @@ select {
 .my-link-sign-up {
     color: #258cd1;
     text-decoration: none;
-    margin-right:20px;
+    background-color: transparent;
+    margin-right: 20px;
 }
     .my-link-sign-up:hover {
         text-decoration: underline;
-        color: white;
+        background-color:transparent;
+        color: #258cd1;
+        font-size:20px;
+        font-weight:600;
     }
 
 .price-list-view-container {
     overflow-y: scroll;
-    height: auto;
+    overflow-x: hidden;
+    max-height: 600px;
     /* left: 42px;*/
     width: Calc(100% - 85px);
-    overflow: hidden;
+    /*overflow: hidden;*/
     /* padding: 0 20px;*/
     padding-top: 0;
     color: rgba(223, 223, 223, 1);
     background-color: rgba(246, 246, 246, 1);
     border-bottom: 1px solid rgba(223, 223, 223, 1);
     border-radius: 10px;
-    margin-bottom:20px;
+    margin-bottom: 20px;
 }
 
 .price-list-view {
@@ -452,6 +457,11 @@ select {
         cursor: pointer;
         background: #258cd1;
     }
+        .price-list-view:hover .my-link-sign-up {
+            color: white !important;
+            cursor: pointer;
+            background-color: transparent;
+        }
 
 .default-cursor:hover {
     cursor: default;
@@ -478,7 +488,7 @@ select {
 
 .additional-appointment-button-container {
     visibility: collapse;
-}
+} 
 
 .hidden-record {
     /*visibility: collapse;*/
@@ -546,7 +556,7 @@ select {
     font-family: 'Manrope';
     /* font-weight: bold;*/
     width: Calc(100% - 40px);
-   margin-top: 30px;
+   margin-top: 10px;
     margin-bottom: 10px;
     margin-left: 43px;
 }
@@ -618,15 +628,13 @@ footer {
 .selected-service {
     background-color: #ffcccc; 
 }
-.price-list-view.active-service {
-    background-color: #ffeaea !important;  
+.active-service {
+    background-color: #75b9e6 !important;
 }
-
-
-.price-list-view:hover .my-link-sign-up,
-.price-list-view .hiddenRecord:hover .my-link-sign-up {
-    color: white;
-   /* padding-right: 20px;*/
+  .hiddenRecord:hover, my-link-sign-up {
+        color: white;
+    }
+.active-service:hover{
 
 }
 .page-title-oform-zapis {
@@ -707,6 +715,10 @@ footer {
     }
     .comment {
         font-size: 12px;
+    }
+    .comment:hover {
+        color:white !important;
+       /* transform:color 0.2s;*/
     }
     .service-price-td {
         padding-right: 5px;

@@ -1,6 +1,6 @@
-﻿document.addEventListener('contextmenu', function (e) {
+﻿/*document.addEventListener('contextmenu', function (e) {
     e.preventDefault();
-});
+});*/
 var itsOk = false;
 var width = 0.0;
 var height = 0.0;
@@ -293,6 +293,7 @@ function ShowModalDialogErrorCodeAmountSecondStep(serviceName, date, time, docto
 //}
 
 function CloseModalDialog() {
+    console.log("CloseModalDialog");
     resultModalDialog.removeClass('show');
     modalDialogBackground.removeClass('show-background-modal-dialog');
     modalDialog.removeClass('show');
@@ -373,6 +374,7 @@ function CloseTermsInfoDialog() {
 }
 // Функция скрытия модального окна
 function CloseTermsInfoDialog() {
+    console.log("CloseTermsInfoDialog");
     var modal = document.getElementById('TermsModalDialog');
     if (modal) {
         modal.style.display = 'none';
