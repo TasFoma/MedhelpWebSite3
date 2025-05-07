@@ -1,7 +1,4 @@
-﻿/*document.addEventListener('contextmenu', function (e) {
-    e.preventDefault();
-});*/
-var itsOk = false;
+﻿var itsOk = false;
 var width = 0.0;
 var height = 0.0;
 
@@ -18,10 +15,8 @@ var sendCodeAgainButton;
 var errorContainer;
 var errorLabel;
 
-$(document).ready(function ()
-{    
-    $(window).resize(function ()
-    {
+$(document).ready(function () {
+    $(window).resize(function () {
         modalDialog.css("left", "Calc(50% - " + modalDialog.width() / 2 + "px)");
         modalDialog.css("top", "Calc(50% - " + modalDialog.height() / 2 + "px)");
         var termsDialog = $('#TermsModalDialog');
@@ -37,8 +32,7 @@ $(document).ready(function ()
     });
 });
 
-function InitModalDialogElements()
-{    
+function InitModalDialogElements() {
     resultModalDialog = $('#resultModalDialog');
     modalDialog = $('#modalDialog');
     modalDialogBackground = $('#modalDialogBackground');
@@ -55,9 +49,6 @@ function InitModalDialogElements()
     errorContainer = $('#errorContainer');
     errorLabel = $('#MainContentPlaceHolder_errorLabel');
 }
-/*function CloseTermsInfoDialog() {
-    document.getElementById('TermsModalDialog').style.display = 'none';
-}*/
 
 //Нужно для создания нового пациента, если будет доступен выбор привязанных к номеру пациентов из списка, и создание нового, если его в списке нет
 //function CheckBoxWasChecked() {
@@ -139,9 +130,8 @@ function InitModalDialogElements()
 //    $('#modalDialog').css("top", "Calc(50% - " + $('#modalDialog').height() / 2 + "px)");
 //}
 
-function ShowModalDialogFirstStep(branchName, branchAddress, price, serviceName, date, time, doctorName, itsError, errorMessage)
-{
-    if(itsError == 0) $('#MainContentPlaceHolder_personalDataHandlingCheckBox').prop('checked', true);
+function ShowModalDialogFirstStep(branchName, branchAddress, price, serviceName, date, time, doctorName, itsError, errorMessage) {
+    if (itsError == 0) $('#MainContentPlaceHolder_personalDataHandlingCheckBox').prop('checked', true);
     modalDialogBackground.bind('click', HideConfirmAppointmentModalDialog);
     modalDialogBackground.addClass("show-background-modal-dialog");
     modalDialog.addClass("show");
@@ -155,14 +145,12 @@ function ShowModalDialogFirstStep(branchName, branchAddress, price, serviceName,
     dateInfoLabel.text(date);
     timeInfoLabel.text(time);
     doctorNameInfoLabel.text(doctorName);
-    if (itsError == 1)
-    {
+    if (itsError == 1) {
         errorContainer.addClass('show');
         errorLabel.removeClass('infoMessage').addClass('errorMessage');
         errorLabel.text(errorMessage);
     }
-    else
-    {
+    else {
         errorContainer.removeClass('show');
     }
     phoneConfirmOffer.addClass('show');
@@ -177,7 +165,7 @@ function ShowModalDialogFirstStep(branchName, branchAddress, price, serviceName,
     //    modalDialog.css("left", 240 - modalDialog.width() / 2 + "px");
     //}
     modalDialog.css("left", "Calc(50% - " + width / 2 + "px)");
-    modalDialog.css("top", "Calc(50% - " + height / 2 + "px)");  
+    modalDialog.css("top", "Calc(50% - " + height / 2 + "px)");
 
     $('#MainContentPlaceHolder_phoneTextBox').mask("+7(999)-999-9999", { autoclear: false }).focus();
 
@@ -207,7 +195,7 @@ function ShowModalDialogSecondStep(branchName, branchAddress, price, serviceName
         errorContainer.removeClass('show');
     }
     $(sendCodeAgainButton).addClass('hide');
-    phoneConfirmForm.addClass('show');    
+    phoneConfirmForm.addClass('show');
     phoneConfirmOffer.removeClass('show');
     modalDialog.css("width", width + "px");
     //if ($(window).width() >= 480)
@@ -293,7 +281,6 @@ function ShowModalDialogErrorCodeAmountSecondStep(serviceName, date, time, docto
 //}
 
 function CloseModalDialog() {
-    console.log("CloseModalDialog");
     resultModalDialog.removeClass('show');
     modalDialogBackground.removeClass('show-background-modal-dialog');
     modalDialog.removeClass('show');
@@ -353,20 +340,15 @@ function ShowTermsForInfoTransfer() {
     modalDialogBackground.unbind();
     termsDialog.addClass('show');
 }
-*/
-/*
+
 function CloseTermsInfoDialog() {
     modalDialogBackground.bind('click', HideConfirmAppointmentModalDialog);
     var termsDialog = $('#TermsModalDialog');
     termsDialog.removeClass('show');
-}/*function CloseTermsInfoDialog() {
-    var modal = document.getElementById('TermsModalDialog');
-    if (modal) {
-        modal.style.display = 'none';
-        console.log('Модальное окно закрыто');
-    }
 }
-*/  function ShowTermsForInfoTransfer() {
+*/
+
+function ShowTermsForInfoTransfer() {
     var modal = document.getElementById('TermsModalDialog');
     if (modal) {
         modal.style.display = 'flex';

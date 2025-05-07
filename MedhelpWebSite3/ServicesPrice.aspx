@@ -61,7 +61,8 @@
                 return;
             }
             $("form").on('click', '.simple-button', ShowLoading);
-            $("form").on('change', '.dropDownList', ShowLoading);
+            $("form").on('change', '.dropDownList', ShowLoading);ss: 'custom-select-dropdown'
+            });
         });
     </script>
 </asp:Content>
