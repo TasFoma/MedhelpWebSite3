@@ -648,114 +648,49 @@ footer {
 }
 /* стили для телефонов */
 @media (max-width: 768px) {
-    .custom-select{
-        max-height:150px !important;
-        overflow-y:auto !important;
+    .price-list-view {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
     }
-    .page-title-oform-zapis {
-        margin-top: 15px;
-        background-color: white;
-        text-decoration: none;
+
+    .service-name-td {
+        width: 60%;
+    }
+
+    .service-price-td {
+        width: 30%;
+        text-align: right;
+    }
+
+    .my-link-sign-up {
+        width: auto;
+        white-space: nowrap;
+    }
+
+    .table-price {
+        display: block;
+    }
+
+    #main-tr {
+        display: flex;
+        width: 100%;
+    }
+
+    #FirstHiddenRecord {
+        width: 100%;
+    }
+
+    .comment {
+        padding-left: 0 !important;
+    }
+
+    /* Дополнительные стили для отображения кнопки */
+    .appointment-button-container {
         display: flex;
         align-items: center;
-        justify-content: center;
-        height: 30px;
     }
-    .table-list-view {
-        margin-left: 10px;
-    }
-    .errorMessage {
-        font-size: 10px;
-        color: red;
-        margin-top: 50px;
-    }
-    #header br {
-        display: initial;
-    } 
-    .schedule {
-      /*  overflow-x: scroll;*/
-        width: 100%;
-    } 
-    body,
-    #form1 {
-        overflow: visible;
-    }
-    .container {
-        max-width: 480px;
-        min-width: 320px;
-        width: 100%;
-    }
-    .price-list-view-container {
-        overflow-y: scroll;
-        height: 200px;
-    }  
-    .row-for-photo,
-    .photo-container,
-    .photo {
-        width: 80px;
-        height: 80px;
-    }
-    .photo-container {
-        padding: 20px 5px 0 5px;
-        padding-left: 20px;
-        width: 60px;
-    }
-    header,
-    footer {
-        width: auto;
-    }
-    .search-button {
-        padding-right: 10px;
-    }
-    .link.space {
-        margin-left: -20px;
-    }
-    .service-name-td {
-        min-width: 170px;
-    }
-    .title {
-        font-size: 14px;
-    }
-    .comment {
-        font-size: 12px;
-    }
-    .comment:hover {
-        color:white !important;
-       /* transform:color 0.2s;*/
-    }
-    .service-price-td {
-        padding-right: 5px;
-    } 
-    h1 {
-        font-size: 15px;
-    }
-    .appointment-picking-title {
-        font-size: 19px;
-    }
-        .photo-container,
-        .photo {
-            width: 60px;
-            height: 100%;
-        } 
-        .service-price-td,
-        .appointment-button-container {
-            visibility: collapse;
-            padding: 0;
-        }
-        .additional-price-td,
-        .additional-appointment-button-container {
-            visibility: visible;
-        }
-        .service-name-td,
-        .additional-appointment-button-container {
-            width: 220px;
-        }
-        header {
-            font-size: 16px;
-        }
-        .main-additional-info {
-            font-size: 16px;
-        }
 }
 
     @media only screen and (min-width: 768px) {

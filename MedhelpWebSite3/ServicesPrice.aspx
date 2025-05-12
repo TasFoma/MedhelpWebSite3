@@ -4,7 +4,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <script src="js/ListView.js"></script>
     <script> 
-      /*  function handleClick(element) {
+      function handleClick(element) {
             var hiddenRecord = $(element).find('.hiddenRecord');
             var signUpLinkButton = $(element).find('.my-link-sign-up');
 
@@ -17,7 +17,7 @@
                     console.log('Кнопка "Записаться" не найдена');
                 }
             }
-        }*/function ShowLoading() {
+        }function ShowLoading() {
             $('#divBackground').show();
             $('#divLoader').show();
         }
@@ -26,7 +26,7 @@
             $('#divBackground').hide();
             $('#divLoader').hide();
         }
-        function handleClick(element) {
+     /*   function handleClick(element) {
             var hiddenRecord = $(element).find('.hiddenRecord');
             var signUpLinkButton = $(element).find('.my-link-sign-up');
 
@@ -52,7 +52,7 @@
                 }
             }
         }
-
+        */
 
         $(document).ready(function () {
             if (/ip(hone|od)|ipad|macintosh/i.test(navigator.userAgent)) {
@@ -84,7 +84,7 @@
             </div>
             <div class="inner-search-block">
                 <div class="search-hint-block">
-                    <asp:Label ID="hintSearchBySpecialtyLabel" runat="server" Text="Или выберите специальность"></asp:Label>
+                    <asp:Label ID="hintSearchBySpecialtyLabel" runat="server" size="5" Text="Или выберите специальность"></asp:Label>
                 </div>
                 <asp:DropDownList ID="SpecCheckDropDownList" runat="server" CssClass="dropDownList custom-select" Font-Bold="True" AutoPostBack="True" OnSelectedIndexChanged="RoleCheckDropDownList_SelectedIndexChanged" AppendDataBoundItems="True">
                     <asp:ListItem Selected="true" Value="0" CssClass="search-textbox" Text="Выбор специальности"></asp:ListItem>
